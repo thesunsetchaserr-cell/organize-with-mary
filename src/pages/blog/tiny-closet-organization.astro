@@ -1,0 +1,192 @@
+---
+import ArticleLayout from '../../components/ArticleLayout.astro';
+import ProductRecommendationCard from '../../components/ProductRecommendationCard.astro';
+
+const toc = [
+  { label: 'Start with a 20-minute closet reset',        href: '#reset' },
+  { label: 'Slim hangers and vertical space',            href: '#hangers' },
+  { label: 'Hanging organizers for renters',             href: '#hanging' },
+  { label: 'Shoe storage for small closets',             href: '#shoes' },
+  { label: 'Under-bed storage for seasonal items',       href: '#under-bed' },
+  { label: 'Bulky coats and linens',                     href: '#bulky' },
+  { label: 'Accessories and small items',                href: '#accessories' },
+  { label: 'Product recommendations',                    href: '#products' },
+  { label: 'Common tiny closet mistakes',                href: '#mistakes' },
+];
+
+const faqs = [
+  {
+    question: 'How do I make a tiny closet hold more without adding shelves?',
+    answer: 'Switch to slim velvet hangers — they\'re about 1/3 the width of plastic hangers, which effectively triples your rod capacity. Add a double-hang rod extender for short items. Use a hanging shelf organizer for folded clothes. These three changes alone can transform a tiny closet without any permanent installation.',
+  },
+  {
+    question: 'Can I add shelves to a rental closet without drilling?',
+    answer: 'Yes. Freestanding closet systems, tension-mounted corner shelves, and hanging shelf organizers all add shelf space without permanent installation. Look for systems specifically designed to be tool-free and renter-safe.',
+  },
+  {
+    question: 'What\'s the best way to store shoes in a small closet?',
+    answer: 'Vertical is best. An over-the-door shoe organizer uses the door itself as storage. Stackable clear shoe boxes keep pairs visible and protected. A slim floor shoe rack is the simplest option for everyday shoes.',
+  },
+  {
+    question: 'Is it worth switching to matching hangers?',
+    answer: 'Yes — and it\'s one of the least expensive changes with the most visible impact. Matching slim velvet hangers unify the look of your closet, give you significantly more rod space, and prevent clothes from slipping to the floor. It\'s usually the first thing I recommend.',
+  },
+];
+
+const relatedPosts = [
+  { title: '17 Renter-Friendly Bathroom Storage Ideas That Don\'t Damage Walls', href: '/blog/renter-friendly-bathroom-storage', category: 'bathroom' as const },
+  { title: 'Small Apartment Kitchen Organization Ideas for Renters With No Pantry', href: '/blog/small-apartment-kitchen-organization', category: 'kitchen' as const },
+];
+---
+
+<ArticleLayout
+  title="How to Organize a Tiny Closet Without Custom Shelving"
+  description="Tiny closet organization ideas for renters and small apartments. Organize clothes, shoes, seasonal items, and accessories without custom shelving or permanent changes."
+  h1="How to Organize a Tiny Closet Without Custom Shelving"
+  category="Closet Organization"
+  categoryColor="closet"
+  readTime="7 min read"
+  {toc}
+  {faqs}
+  {relatedPosts}
+>
+
+  <p>
+    A tiny rental closet can make getting dressed feel like a daily excavation. One rod, one shelf, a floor — that's what most rental closets offer. And because it's a rental, you can't install the custom system you've been saving on Pinterest.
+  </p>
+  <p>
+    Here's what actually works: a few smart systems, none of them permanent, most of them inexpensive. The goal isn't a perfect closet — it's a closet that works for your actual life and the clothes you actually wear.
+  </p>
+
+  <h2 id="reset">Start with a 20-Minute Closet Reset</h2>
+  <p>
+    Before you buy anything, pull everything out of the closet. Separate into three piles: keep, donate, and unsure.
+  </p>
+  <p>
+    Be honest — if you haven't worn something in a year and can't name a specific occasion where you'd reach for it, the donate pile is probably right.
+  </p>
+  <p>
+    Most people find that a third of what's in their closet is either broken, doesn't fit, or has been genuinely forgotten. Removing that third often solves the space problem before you've bought a single product.
+  </p>
+  <p>
+    Once you've edited, group what remains by category: tops, bottoms, dresses, outerwear, and "other." These categories are what you'll build your system around.
+  </p>
+
+  <h2 id="hangers">Slim Hangers and Vertical Space</h2>
+  <p>
+    If you're using standard plastic hangers, this is your highest-impact change. Standard plastic hangers are about 5/8 of an inch thick — slim velvet hangers are about 1/5 of an inch.
+  </p>
+  <p>
+    On a 36-inch rod, that difference means roughly 30–35 additional items. It's not a small upgrade.
+  </p>
+
+  <ProductRecommendationCard
+    number={1}
+    name="Slim Velvet Non-Slip Hangers (Set of 50)"
+    bestFor="Anyone using plastic or wire hangers who wants more rod space"
+    whyItHelps="Dramatically increases rod capacity, prevents clothes from slipping to the floor, and makes the whole closet look more uniform and calm. One of the most impactful $15–20 you can spend on a closet."
+    renterNote="Hangs on your existing rod. Zero installation."
+    category="closet"
+  />
+
+  <ProductRecommendationCard
+    number={2}
+    name="Double Hang Closet Rod Extender"
+    bestFor="Short items like blouses, folded pants, and jackets"
+    whyItHelps="Hangs from your existing rod and creates a second level of hanging space below for short items. On a 5-foot rod, this can add 25–30 additional hangers worth of space — without touching the walls."
+    renterNote="Hooks over the existing rod. No tools, no installation."
+    watchOut="Only works for short garments — tops, shirts, folded pants. Full-length dresses and coats still need the main rod."
+    category="closet"
+  />
+
+  <h2 id="hanging">Hanging Organizers for Renters</h2>
+  <p>
+    Hanging shelf organizers are one of the best-kept secrets of small closet organization. They hang from the rod and create a column of shelves for folded clothes — no floor space used, no installation needed.
+  </p>
+
+  <ProductRecommendationCard
+    number={3}
+    name="Hanging Closet Shelf Organizer (4–6 shelves)"
+    bestFor="Folded clothes, sweaters, jeans, and accessories"
+    whyItHelps="Creates 4–6 shelves of folded storage hanging from the rod, in the footprint of roughly 2–3 hanging items. Keeps folded clothes visible and accessible without a dresser."
+    renterNote="Hooks over the closet rod. Remove in seconds."
+    category="closet"
+  />
+
+  <h2 id="shoes">Shoe Storage for Small Closets</h2>
+  <p>
+    Shoes eat closet floor space and make everything else feel chaotic. The goal is to get them off the floor and into a system — visible, accessible, and not taking up your prime closet real estate.
+  </p>
+
+  <ProductRecommendationCard
+    number={4}
+    name="Over-the-Door Shoe Organizer (Clear Pockets)"
+    bestFor="Everyday shoes — flats, sneakers, sandals, small boots"
+    whyItHelps="Uses the closet door to store up to 24 pairs. Clear pockets mean you can see every pair without moving anything. Instantly clears the closet floor."
+    renterNote="Hangs over the door. No screws, no wall hooks."
+    watchOut="Bulkier shoes (tall boots, thick sneakers) may not fit in standard pockets — measure pocket depth before buying."
+    category="closet"
+  />
+
+  <ProductRecommendationCard
+    number={5}
+    name="Stackable Clear Shoe Boxes"
+    bestFor="Shoes you want to protect and keep visible"
+    whyItHelps="Clear boxes stack cleanly and let you see exactly what's inside. Good for shoes you don't want to squish in a soft organizer. Stack as high as your closet allows."
+    renterNote="Free-standing stacks. No mounting required."
+    category="closet"
+  />
+
+  <h2 id="under-bed">Under-Bed Storage for Seasonal Items</h2>
+  <p>
+    In a small apartment, under the bed is prime storage real estate. The space under a standard bed is typically 7–9 inches — enough for a full season of sweaters, extra blankets, or out-of-rotation shoes.
+  </p>
+
+  <ProductRecommendationCard
+    number={6}
+    name="Flat Under-Bed Storage Containers with Wheels"
+    bestFor="Seasonal clothing, extra bedding, and off-season shoes"
+    whyItHelps="Designed to fit under most beds. Lids keep dust out. Wheels make them easy to slide in and out. Use for anything you need a few times a year, not daily."
+    renterNote="Free-standing and portable. No modification to the bed frame."
+    category="closet"
+  />
+
+  <ProductRecommendationCard
+    number={7}
+    name="Vacuum Storage Bags (Jumbo)"
+    bestFor="Bulky winter coats, comforters, and sweaters"
+    whyItHelps="Compress down to about 1/3 of their original size with a regular vacuum. Lets you store an entire off-season wardrobe in the space that would otherwise hold two coats."
+    renterNote="No tools. Works with any household vacuum."
+    watchOut="Don't use for items that can't be compressed without damage — structured blazers, vintage pieces, or anything with padding."
+    category="closet"
+  />
+
+  <h2 id="bulky">Bulky Coats and Linens</h2>
+  <p>
+    Coats and extra linens take up disproportionate space and are only needed seasonally. The fix is to keep only your current-season coats on the main rod and store everything else under the bed or in vacuum bags.
+  </p>
+  <p>
+    For everyday coats: an over-door hook rack on the bedroom or hallway door takes your most-used coats completely off the rod, freeing that space for clothes you wear more often.
+  </p>
+
+  <h2 id="accessories">Accessories and Small Items</h2>
+
+  <ProductRecommendationCard
+    number={8}
+    name="Shelf Dividers (for folded stacks)"
+    bestFor="Keeping folded items from toppling on a shelf"
+    whyItHelps="Slide onto any shelf edge and create a physical divider between stacks of sweaters, jeans, or towels. Prevents that one sweater from bringing the whole pile down."
+    renterNote="Slide on and off the shelf with no tools or adhesive."
+    category="closet"
+  />
+
+  <h2 id="mistakes">Common Tiny Closet Mistakes to Avoid</h2>
+  <ul>
+    <li><strong>Not editing before organizing.</strong> Adding storage to a closet full of clothes you don't wear just moves the problem. Edit first, always.</li>
+    <li><strong>Keeping mismatched hangers.</strong> Mixed plastic, wire, and velvet hangers make every closet look chaotic. Matching slim velvet hangers cost about $20 and make a dramatic visible difference.</li>
+    <li><strong>Ignoring the closet door.</strong> The back of your door is prime real estate for shoes, accessories, and small organizers.</li>
+    <li><strong>Stacking folded items too high.</strong> Stacks taller than 4–5 items always collapse. Use dividers or hanging organizers instead.</li>
+    <li><strong>Storing seasonal items in prime spots.</strong> Winter coats shouldn't be front and center in July. Rotate seasonally so the things you actually reach for are always accessible.</li>
+  </ul>
+
+</ArticleLayout>

@@ -1,0 +1,61 @@
+---
+/* Inline article CTA box — appears near top and bottom of each article */
+---
+
+<div class="icta">
+  <div class="icta-inner">
+    <div class="icta-text">
+      <p class="icta-title">📋 Free Small Space Storage Checklist</p>
+      <p class="icta-body">Before buying another bin, grab Mary's room-by-room checklist so you can measure first, choose renter-friendly products, and avoid wasting money.</p>
+    </div>
+    <a href="/free-small-space-storage-checklist" class="btn btn--primary icta-btn">
+      Download the Free Checklist
+    </a>
+  </div>
+</div>
+
+<style>
+  .icta {
+    background: var(--c-clay-light);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+    padding: var(--s-5) var(--s-6);
+    margin: var(--s-8) 0;
+  }
+
+  .icta-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-4);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .icta-text { flex: 1; min-width: 200px; }
+
+  .icta-title {
+    font-weight: 700;
+    font-size: var(--text-base);
+    margin-bottom: var(--s-2);
+    color: var(--c-text);
+  }
+
+  .icta-body {
+    font-size: var(--text-base);
+    color: var(--c-text-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .icta-btn { flex-shrink: 0; white-space: nowrap; }
+
+  @media (max-width: 560px) {
+    .icta-btn { width: 100%; }
+    .icta-inner { flex-direction: column; align-items: stretch; gap: var(--s-5); }
+  }
+
+  @media (max-width: 480px) {
+    .icta { padding: var(--s-5); }
+    .icta-title { font-size: var(--text-lg); }
+  }
+</style>

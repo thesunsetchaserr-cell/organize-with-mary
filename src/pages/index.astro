@@ -1,0 +1,392 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogCard from '../components/BlogCard.astro';
+import CTASection from '../components/CTASection.astro';
+
+const roomCards = [
+  {
+    label:   'Bathroom Storage',
+    href:    '/blog/renter-friendly-bathroom-storage',
+    icon:    '🪥',
+    color:   'bathroom',
+    benefit: 'No-drill ideas for tiny bathrooms, cluttered counters, and under-sink chaos.',
+  },
+  {
+    label:   'Small Kitchen Organization',
+    href:    '/blog/small-apartment-kitchen-organization',
+    icon:    '🍳',
+    color:   'kitchen',
+    benefit: 'No-pantry solutions, cabinet organizers, and counter-clutter fixes for small rentals.',
+  },
+  {
+    label:   'Tiny Closet Organization',
+    href:    '/blog/tiny-closet-organization',
+    icon:    '👗',
+    color:   'closet',
+    benefit: 'Simple closet systems for clothes, shoes, seasonal items, and hidden storage.',
+  },
+];
+
+const articles = [
+  {
+    title:    '17 Renter-Friendly Bathroom Storage Ideas That Don\'t Damage Walls',
+    excerpt:  'No-drill shelves, over-the-toilet towers, under-sink organizers, and slim rolling carts — everything you need to tame a small rental bathroom.',
+    href:     '/blog/renter-friendly-bathroom-storage',
+    category: 'Bathroom',
+    catColor: 'bathroom',
+    readTime: '7 min read',
+  },
+  {
+    title:    'Small Apartment Kitchen Organization Ideas for Renters With No Pantry',
+    excerpt:  'Tiny cabinets, zero counter space, no pantry — here\'s how to create a calm, functional kitchen in a small rental apartment.',
+    href:     '/blog/small-apartment-kitchen-organization',
+    category: 'Kitchen',
+    catColor: 'kitchen',
+    readTime: '8 min read',
+  },
+  {
+    title:    'How to Organize a Tiny Closet Without Custom Shelving',
+    excerpt:  'You don\'t need a custom closet system to feel in control. Here\'s how to maximize every inch of a small rental closet.',
+    href:     '/blog/tiny-closet-organization',
+    category: 'Closet',
+    catColor: 'closet',
+    readTime: '7 min read',
+  },
+];
+---
+
+<BaseLayout
+  title="Organize with Mary — Renter-Friendly Organization for Small Spaces"
+  description="Simple, renter-friendly organization ideas for small apartments. No-drill storage, budget-friendly systems, and calm reset routines for busy women."
+>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero bg-linen">
+    <div class="container hero-wrap">
+      <div class="hero-text">
+        <span class="section-label">For Renters &amp; Small Apartments</span>
+        <h1 class="hero-hl">
+          Make your small rental feel calmer, cleaner, and easier to organize.
+        </h1>
+        <p class="hero-sub">
+          Renter-friendly storage ideas, no-drill solutions, and simple reset routines for women who want less clutter without spending a fortune.
+        </p>
+        <div class="hero-ctas">
+          <a href="/free-small-space-storage-checklist" class="btn btn--primary btn--lg hero-primary-cta">
+            Get the Free Storage Checklist
+          </a>
+          <a href="/blog" class="btn btn--secondary btn--lg hero-secondary-cta">
+            Browse Organization Ideas
+          </a>
+        </div>
+        <p class="hero-trust">Free checklist &nbsp;·&nbsp; No spam &nbsp;·&nbsp; Made for renters</p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="vis-card vis-card--portrait vis-card--clay hero-img">
+          <span class="vis-card__icon">🏠</span>
+          <p class="vis-card__title">Free Storage Checklist</p>
+          <p class="vis-card__sub">Measure first. Buy smarter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROOMS ═══ -->
+  <section class="rooms bg-ivory">
+    <div class="container">
+      <h2 class="rooms-hl text-center">Start with the room that feels most overwhelming</h2>
+      <p class="rooms-sub text-muted text-center">
+        You don't need to organize your entire apartment this weekend. Pick one room.
+      </p>
+      <div class="rooms-grid">
+        {roomCards.map(room => (
+          <a href={room.href} class={`room-card card room-card--${room.color}`}>
+            <div class={`room-thumb vis-card vis-card--landscape vis-card--${room.color}`}>
+              <span class="vis-card__icon room-icon">{room.icon}</span>
+            </div>
+            <div class="room-body">
+              <span class={`badge badge--${room.color} room-badge`}>{room.label}</span>
+              <p class="room-benefit">{room.benefit}</p>
+              <span class="room-link">See ideas →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LEAD MAGNET ═══ -->
+  <section class="lm-section bg-clay-light">
+    <div class="container lm-inner">
+      <div class="lm-visual">
+        <img
+          src="/images/free-checklist-mockup.webp"
+          alt="Free Small Space Storage Checklist — room-by-room PDF for renters"
+          class="lm-img"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="lm-text">
+        <span class="section-label">Free Download</span>
+        <h2 class="lm-hl">Free Small Space Storage Shopping Checklist</h2>
+        <p class="lm-body text-muted">
+          A room-by-room checklist of renter-friendly storage products to help you organize your kitchen, bathroom, closet, entryway, and hidden clutter zones without drilling or wasting money.
+        </p>
+        <a href="/free-small-space-storage-checklist" class="btn btn--primary btn--lg lm-cta">
+          Download the Free Checklist
+        </a>
+        <p class="trust-note" style="text-align:left">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURED ARTICLES ═══ -->
+  <section class="articles bg-ivory">
+    <div class="container">
+      <h2 class="articles-hl text-center">Organization guides for renters</h2>
+      <p class="articles-sub text-muted text-center">
+        Practical, honest guides — no judgment, no overwhelm, just steps you can actually follow.
+      </p>
+      <div class="articles-grid">
+        {articles.map(a => (
+          <a href={a.href} class="article-card card">
+            <div class={`article-thumb vis-card vis-card--landscape vis-card--${a.catColor}`}>
+              <span class="vis-card__icon">
+                {a.catColor === 'kitchen' ? '🍳' : a.catColor === 'closet' ? '👗' : '🪥'}
+              </span>
+              <p class="vis-card__sub">{a.category}</p>
+            </div>
+            <div class="article-body-card">
+              <span class={`badge badge--${a.catColor}`}>{a.category}</span>
+              <p class="article-title">{a.title}</p>
+              <p class="article-excerpt text-muted text-sm">{a.excerpt}</p>
+              <span class="text-clay text-sm article-link">Read the guide →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KIT TEASER ═══ -->
+  <section class="kit bg-linen">
+    <div class="container kit-inner">
+      <div class="kit-visual">
+        <img
+          src="/images/reset-kit-hero-mockup.webp"
+          alt="Mary's Small Space Reset Kit — digital download"
+          class="kit-img"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="kit-text">
+        <span class="section-label">Digital Product — $17</span>
+        <h2 class="kit-hl">Mary's Small Space Reset Kit</h2>
+        <p class="kit-body text-muted">
+          A $17 digital kit with checklists, planners, shopping lists, and reset routines to help you organize your small rental room by room — kitchen, bathroom, closet, entryway, and weekly routine.
+        </p>
+        <ul class="kit-list checklist">
+          <li>7-Day Small Space Reset Plan</li>
+          <li>Room-by-room checklists and planners</li>
+          <li>Renter-safe shopping list</li>
+          <li>Weekly reset routine</li>
+        </ul>
+        <a href="/small-space-reset-kit" class="btn btn--primary btn--lg">
+          See the Reset Kit — $17
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DISCLOSURE ═══ -->
+  <div class="container">
+    <p class="hp-disclosure">
+      Some posts on this site may contain affiliate links. If you buy through those links, we may earn a commission at no extra cost to you. We only recommend products that fit the problem being solved.
+      <a href="/legal/affiliate-disclosure">Read our full disclosure.</a>
+    </p>
+  </div>
+
+</BaseLayout>
+
+<style>
+  /* ── Hero ── */
+  .hero { padding-block: var(--s-10) var(--s-10); }
+
+  .hero-wrap {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--s-10);
+    align-items: center;
+  }
+
+  .hero-text .section-label { margin-bottom: var(--s-4); }
+
+  .hero-hl {
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.14;
+    margin-bottom: var(--s-4);
+  }
+
+  .hero-sub {
+    font-size: var(--text-lg);
+    color: var(--c-text-muted);
+    margin-bottom: var(--s-6);
+    max-width: 480px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    margin-bottom: var(--s-3);
+  }
+
+  .hero-trust {
+    font-size: var(--text-sm);
+    color: var(--c-text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .hero-img { border-radius: var(--r-xl); min-height: 340px; }
+
+  /* ── Rooms ── */
+  .rooms { padding-block: var(--section-py); }
+  .rooms-hl { margin-bottom: var(--s-3); }
+  .rooms-sub { margin-bottom: var(--s-8); max-width: 400px; margin-inline: auto; }
+
+  .rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-5);
+  }
+
+  .room-card { text-decoration: none; }
+  .room-thumb { border-radius: var(--r-lg) var(--r-lg) 0 0; min-height: 120px; }
+  .room-icon { font-size: 2.8rem; }
+  .room-body { padding: var(--s-4) var(--s-5) var(--s-5); }
+  .room-badge { margin-bottom: var(--s-3); }
+  .room-benefit {
+    font-size: var(--text-sm);
+    color: var(--c-text-muted);
+    margin-bottom: var(--s-3);
+    line-height: 1.55;
+  }
+  .room-link { font-size: var(--text-sm); font-weight: 600; color: var(--c-clay); }
+
+  /* ── Lead Magnet ── */
+  .lm-section { padding-block: var(--section-py); }
+  .lm-inner {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: var(--s-10);
+    align-items: center;
+  }
+  .lm-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-lg);
+    display: block;
+  }
+  .lm-text .section-label { margin-bottom: var(--s-3); }
+  .lm-hl { font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: var(--s-4); }
+  .lm-body { margin-bottom: var(--s-5); }
+  .lm-cta { margin-bottom: var(--s-3); display: block; max-width: 320px; text-align: center; }
+
+  /* ── Articles ── */
+  .articles { padding-block: var(--section-py); }
+  .articles-hl { margin-bottom: var(--s-3); }
+  .articles-sub { margin-bottom: var(--s-8); max-width: 420px; margin-inline: auto; }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-5);
+  }
+
+  .article-card { text-decoration: none; display: flex; flex-direction: column; }
+  .article-thumb { border-radius: var(--r-lg) var(--r-lg) 0 0; min-height: 120px; }
+  .article-body-card {
+    padding: var(--s-4) var(--s-5) var(--s-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    flex: 1;
+  }
+  .article-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-base);
+    color: var(--c-text);
+    line-height: 1.35;
+    margin: 0;
+  }
+  .article-excerpt { line-height: 1.55; margin: 0; }
+  .article-link { margin-top: auto; }
+
+  /* ── Kit teaser ── */
+  .kit { padding-block: var(--section-py); }
+  .kit-inner {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: var(--s-10);
+    align-items: center;
+  }
+  .kit-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-lg);
+    display: block;
+  }
+  .kit-text .section-label { margin-bottom: var(--s-3); }
+  .kit-hl { font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: var(--s-4); }
+  .kit-body { margin-bottom: var(--s-5); }
+  .kit-list { margin-bottom: var(--s-6); }
+
+  /* ── Disclosure ── */
+  .hp-disclosure {
+    font-size: var(--text-xs);
+    color: var(--c-text-light);
+    padding-block: var(--s-6) var(--s-8);
+    margin: 0;
+    line-height: 1.6;
+    border-top: 1px solid var(--c-border-light);
+    margin-top: var(--s-2);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 860px) {
+    .hero-wrap, .kit-inner { grid-template-columns: 1fr; }
+    .hero-visual, .kit-visual { display: none; }
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .hero-primary-cta { width: 100%; text-align: center; }
+    .hero-secondary-cta { text-align: center; }
+    .lm-inner { grid-template-columns: 1fr; }
+    .lm-visual { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    .rooms-grid, .articles-grid { grid-template-columns: 1fr; }
+    .lm-cta { max-width: none; width: 100%; }
+    .hero-secondary-cta { background: transparent; border-color: transparent; color: var(--c-clay); text-decoration: underline; padding-left: 0; }
+  }
+
+  @media (max-width: 480px) {
+    /* Tighten vertical rhythm */
+    .hero { padding-block: var(--s-8); }
+    .hero-hl { font-size: 1.75rem; }
+    .hero-sub { font-size: var(--text-base); }
+    .hero-trust { font-size: var(--text-sm); }
+    .rooms { padding-block: var(--s-8); }
+    .articles { padding-block: var(--s-8); }
+    .kit { padding-block: var(--s-8); }
+    .lm-section { padding-block: var(--s-8); }
+    /* Article cards: bigger title on mobile */
+    .article-title { font-size: var(--text-lg); }
+    .article-excerpt { font-size: var(--text-sm); }
+  }
+</style>

@@ -1,0 +1,231 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from './CTASection.astro';
+import FAQ from './FAQ.astro';
+import InlineChecklistCTA from './InlineChecklistCTA.astro';
+
+interface RelatedPost {
+  title: string;
+  href: string;
+  category?: 'bathroom' | 'kitchen' | 'closet' | 'reset';
+  excerpt?: string;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  category?: string;
+  categoryColor?: string;
+  readTime?: string;
+  toc?: { label: string; href: string }[];
+  faqs?: FAQItem[];
+  relatedPosts?: RelatedPost[];
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  h1,
+  category      = 'Organization',
+  categoryColor = 'bathroom',
+  readTime      = '7 min read',
+  toc           = [],
+  faqs          = [],
+  relatedPosts  = [],
+  ogImage,
+} = Astro.props;
+
+const catBadgeMap: Record<string, string> = {
+  bathroom: 'badge--bathroom',
+  kitchen:  'badge--kitchen',
+  closet:   'badge--closet',
+  reset:    'badge--reset',
+};
+const catBadge = catBadgeMap[categoryColor] ?? 'badge--clay';
+
+const heroIconMap: Record<string, string> = { bathroom:'🪥', kitchen:'🍳', closet:'👗', reset:'🏠', clay:'📋' };
+const heroSubMap:  Record<string, string>  = { bathroom:'No-drill ideas for renters', kitchen:'No pantry? Start here.', closet:'Make every inch count', reset:'Simple reset routines', clay:'Renter-friendly storage' };
+const heroIcon = heroIconMap[categoryColor] ?? '🏠';
+const heroSub  = heroSubMap[categoryColor]  ?? 'Organization ideas for renters';
+---
+
+<BaseLayout {title} {description} {ogImage}>
+  <article class="article-page">
+
+    <!-- Pinterest hero image -->
+    <div class={`article-hero vis-card vis-card--pinterest vis-card--${categoryColor}`}>
+      <div class="hero-brand-mark">Organize with Mary</div>
+      <span class="vis-card__icon">{heroIcon}</span>
+      <p class="hero-article-title">{h1}</p>
+      <p class="vis-card__sub">{heroSub}</p>
+    </div>
+
+    <div class="container--content article-body">
+
+      <!-- Meta -->
+      <div class="article-meta">
+        <span class={`badge ${catBadge}`}>{category}</span>
+        <span class="text-muted text-sm">{readTime}</span>
+      </div>
+
+      <!-- H1 -->
+      <h1 class="article-h1">{h1}</h1>
+
+      <!-- Affiliate disclosure -->
+      <div class="affiliate-disclosure" role="note">
+        <strong>Disclosure:</strong> This post may contain affiliate links. If you buy through these links, we may earn a small commission at no extra cost to you. We only recommend products that fit the problem being solved.
+        <a href="/legal/affiliate-disclosure">Full disclosure.</a>
+      </div>
+
+      <!-- Table of Contents -->
+      {toc.length > 0 && (
+        <nav class="toc" aria-label="Contents">
+          <p class="toc-label">In this guide</p>
+          <ol>
+            {toc.map(item => (
+              <li><a href={item.href}>{item.label}</a></li>
+            ))}
+          </ol>
+        </nav>
+      )}
+
+      <!-- Inline CTA — top -->
+      <InlineChecklistCTA />
+
+      <!-- Article content -->
+      <div class="prose">
+        <slot />
+      </div>
+
+      <!-- Inline CTA — bottom -->
+      <InlineChecklistCTA />
+    </div>
+
+    <!-- Full-width checklist CTA -->
+    <CTASection variant="linen" size="compact" />
+
+    <!-- FAQs -->
+    {faqs.length > 0 && (
+      <div class="container--content">
+        <FAQ items={faqs} headline="Common questions" />
+      </div>
+    )}
+
+    <!-- Related posts -->
+    {relatedPosts.length > 0 && (
+      <section class="related-section bg-linen">
+        <div class="container--content">
+          <h2 class="related-heading">Keep organizing</h2>
+          <div class="related-grid">
+            {relatedPosts.map(post => (
+              <a href={post.href} class={`related-card card vis-card--${post.category ?? 'bathroom'}`}>
+                <div class={`related-thumb vis-card vis-card--landscape vis-card--${post.category ?? 'bathroom'}`}>
+                  <span class="vis-card__icon">
+                    {post.category === 'kitchen' ? '🍳' : post.category === 'closet' ? '👗' : post.category === 'reset' ? '🏠' : '🪥'}
+                  </span>
+                </div>
+                <div class="related-body">
+                  <p class="related-title">{post.title}</p>
+                  <span class="text-clay text-sm">Read guide →</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+  </article>
+</BaseLayout>
+
+<style>
+  .article-hero {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    min-height: 280px;
+    gap: var(--s-3);
+    padding: var(--s-10) var(--s-6);
+  }
+
+  .hero-brand-mark {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: var(--s-2);
+  }
+
+  .hero-article-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.05rem, 3.5vw, 1.4rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto var(--s-2);
+    opacity: 0.95;
+  }
+
+  .article-body { padding-block: var(--s-8) var(--s-10); }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    margin-bottom: var(--s-4);
+  }
+
+  .article-h1 {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    margin-bottom: var(--s-6);
+    line-height: 1.18;
+  }
+
+  .related-section { padding-block: var(--s-10); }
+  .related-heading { margin-bottom: var(--s-6); font-size: var(--text-2xl); }
+
+  .related-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .related-thumb {
+    border-radius: 0;
+    min-height: 140px;
+    padding: var(--s-4);
+  }
+  .related-body { padding: var(--s-4); }
+  .related-title {
+    font-weight: 600;
+    color: var(--c-text);
+    margin-bottom: var(--s-2);
+    font-size: var(--text-sm);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 600px) {
+    .article-hero { min-height: 220px; padding: var(--s-8) var(--s-5); }
+    .article-body { padding-block: var(--s-6) var(--s-8); }
+    .article-h1 { font-size: 1.55rem; margin-bottom: var(--s-5); }
+
+    /* Tighter H2 rhythm on mobile */
+    :global(.prose h2) {
+      margin-top: var(--s-8);
+      padding-top: var(--s-4);
+    }
+
+    /* Related cards full-width stacked */
+    :global(.related-grid) { grid-template-columns: 1fr; gap: var(--s-3); }
+    .related-title { font-size: var(--text-base); }
+    .related-section { padding-block: var(--s-8); }
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FAQItem[];
+  headline?: string;
+}
+
+const { items, headline = 'Common Questions' } = Astro.props;
+---
+
+<section class="faq-section">
+  <div class="container--content">
+    <h2 class="faq-heading">{headline}</h2>
+    <div class="faq-list">
+      {items.map((item, i) => (
+        <details class="faq-item" name="faq">
+          <summary class="faq-question">{item.question}</summary>
+          <div class="faq-answer">
+            <p set:html={item.answer} />
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section { padding-block: var(--s-12); }
+
+  .faq-heading {
+    margin-bottom: var(--s-8);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+</style>

@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="You're In — Your Small Space Reset Kit Is Ready | Organize with Mary"
+  description="Thank you for your purchase. Your Small Space Reset Kit is ready to download."
+>
+
+  <section class="ty-hero bg-linen">
+    <div class="container--narrow text-center">
+      <span class="ty-icon" aria-hidden="true">🎉</span>
+      <h1 class="ty-headline">You're in — your Small Space Reset Kit is ready.</h1>
+      <p class="ty-sub text-muted">
+        Thank you so much. Check your email for your download link — it should arrive within a few minutes. If you don't see it, check your spam folder.
+      </p>
+    </div>
+  </section>
+
+  <section class="ty-download">
+    <div class="container--narrow text-center">
+      <div class="download-card card">
+        <div class="download-card-body">
+          <span class="download-icon" aria-hidden="true">📦</span>
+          <h2 class="download-heading">Download the Reset Kit</h2>
+          <p class="download-note text-muted">
+            Click the button below to download your kit. The same link has been sent to your email so you'll always have it.
+          </p>
+          <!-- DOWNLOAD BUTTON PLACEHOLDER — replace href with actual digital product download URL -->
+          <a href="#download-link-placeholder" class="btn btn--primary btn--lg download-btn">
+            Download Your Kit (PDF)
+          </a>
+          <!-- Replace #download-link-placeholder with your actual file delivery URL (e.g., SendOwl, Gumroad, ThriveCart, or your own hosted URL) -->
+          <p class="text-sm text-muted download-note-small">
+            A download link has also been sent to your email.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ty-email-note bg-reset">
+    <div class="container--narrow text-center">
+      <h2>Check your inbox</h2>
+      <p class="text-muted">
+        A confirmation email with your download link is on its way. It comes from <strong>Organize with Mary</strong> — add it to your contacts so future emails don't end up in spam.
+      </p>
+      <p class="text-muted">
+        Over the next few days, I'll also send you a few tips on how to get the most out of the kit — starting with which room to tackle first.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ UPSELL — Reset Kit ═══ -->
+  <section class="ty-upsell bg-clay-light">
+    <div class="container--narrow text-center">
+      <span class="section-label">One more thing</span>
+      <h2 class="ty-upsell-hl">Want a room-by-room reset plan?</h2>
+      <p class="text-muted ty-upsell-body">
+        The Reset Kit takes you further — 10 worksheets, a 7-day schedule, and a measurement tracker so you know exactly what to buy. $17, instant download.
+      </p>
+      <!-- Replace with tracked link after launch: /small-space-reset-kit?utm_source=thankyou&utm_medium=web -->
+      <a href="/small-space-reset-kit" class="btn btn--primary btn--lg ty-upsell-btn">
+        See the Reset Kit — $17
+      </a>
+      <p class="trust-note">One-time payment · Digital download · No tools needed</p>
+    </div>
+  </section>
+
+  <section class="ty-next">
+    <div class="container--content text-center">
+      <h2>While you wait, start reading</h2>
+      <p class="text-muted ty-next-sub">
+        These guides pair directly with your checklist.
+      </p>
+      <div class="ty-next-grid">
+        <a href="/blog/renter-friendly-bathroom-storage" class="ty-next-card card">
+          <div class="vis-card vis-card--landscape vis-card--bathroom ty-next-thumb">
+            <span class="vis-card__icon">🪥</span>
+          </div>
+          <div class="ty-next-body">
+            <p class="ty-next-title">17 Renter-Friendly Bathroom Storage Ideas</p>
+            <span class="text-clay text-sm">Read the guide →</span>
+          </div>
+        </a>
+        <a href="/blog/small-apartment-kitchen-organization" class="ty-next-card card">
+          <div class="vis-card vis-card--landscape vis-card--kitchen ty-next-thumb">
+            <span class="vis-card__icon">🍳</span>
+          </div>
+          <div class="ty-next-body">
+            <p class="ty-next-title">Small Apartment Kitchen Organization</p>
+            <span class="text-clay text-sm">Read the guide →</span>
+          </div>
+        </a>
+        <a href="/blog/tiny-closet-organization" class="ty-next-card card">
+          <div class="vis-card vis-card--landscape vis-card--closet ty-next-thumb">
+            <span class="vis-card__icon">👗</span>
+          </div>
+          <div class="ty-next-body">
+            <p class="ty-next-title">How to Organize a Tiny Closet</p>
+            <span class="text-clay text-sm">Read the guide →</span>
+          </div>
+        </a>
+      </div>
+      <a href="/blog" class="btn btn--secondary mt-8">Browse All Organization Guides</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .ty-hero { padding-block: var(--s-16) var(--s-10); }
+  .ty-icon { font-size: 3rem; display: block; margin-bottom: var(--s-5); }
+  .ty-headline { font-size: clamp(1.6rem, 4vw, 2.8rem); margin-bottom: var(--s-5); }
+  .ty-sub { font-size: var(--text-lg); }
+
+  .ty-download { padding-block: var(--s-12); }
+  .download-card { overflow: visible; }
+  .download-card-body { padding: var(--s-8); }
+  .download-icon { font-size: 2.5rem; display: block; margin-bottom: var(--s-4); }
+  .download-heading { margin-bottom: var(--s-3); }
+  .download-note { margin-bottom: var(--s-6); }
+  .download-btn { margin-bottom: var(--s-3); }
+  .download-note-small { margin: 0; }
+
+  .ty-email-note { padding-block: var(--s-12); }
+  .ty-email-note h2 { margin-bottom: var(--s-4); }
+
+  /* Upsell */
+  .ty-upsell { padding-block: var(--s-12); }
+  .ty-upsell .section-label { margin-bottom: var(--s-4); }
+  .ty-upsell-hl { font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: var(--s-4); }
+  .ty-upsell-body { font-size: var(--text-lg); margin-bottom: var(--s-6); max-width: 480px; margin-inline: auto; }
+  .ty-upsell-btn { margin-bottom: var(--s-3); display: block; max-width: 340px; margin-inline: auto; text-align: center; }
+
+  .ty-next { padding-block: var(--s-12); }
+  .ty-next-sub { margin-bottom: var(--s-8); }
+  .ty-next-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-5);
+    text-align: left;
+  }
+  .ty-next-card { text-decoration: none; display: flex; flex-direction: column; }
+  .ty-next-thumb { border-radius: var(--r-lg) var(--r-lg) 0 0; min-height: 120px; }
+  .ty-next-body { padding: var(--s-4); }
+  .ty-next-title { font-weight: 600; color: var(--c-text); margin-bottom: var(--s-2); font-size: var(--text-base); }
+
+  @media (max-width: 700px) {
+    .ty-next-grid { grid-template-columns: 1fr; }
+    .ty-upsell-btn { max-width: none; width: 100%; }
+  }
+
+  @media (max-width: 480px) {
+    .ty-hero { padding-block: var(--s-8) var(--s-6); }
+    .ty-sub { font-size: var(--text-base); }
+    .ty-download { padding-block: var(--s-8); }
+    .download-card-body { padding: var(--s-5); }
+    .download-btn { width: 100%; }
+    .ty-email-note { padding-block: var(--s-8); }
+    .ty-upsell { padding-block: var(--s-8); }
+    .ty-upsell-body { font-size: var(--text-base); }
+    .ty-next { padding-block: var(--s-8); }
+    .ty-next-sub { margin-bottom: var(--s-5); }
+  }
+</style>

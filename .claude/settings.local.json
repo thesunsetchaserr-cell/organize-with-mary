@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(run)",
+      "Skill(run:*)",
+      "PowerShell(Start-Process \"http://localhost:4321\")",
+      "PowerShell($gitPaths = @\\(\"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\", \"C:\\\\Program Files \\(x86\\)\\\\Git\\\\bin\\\\git.exe\", \"$env:LOCALAPPDATA\\\\Programs\\\\Git\\\\bin\\\\git.exe\"\\); foreach \\($p in $gitPaths\\) { if \\(Test-Path $p\\) { Write-Output \"Found: $p\" } })",
+      "PowerShell($env:PATH -split \";\" | Where-Object { $_ -match \"git\" })",
+      "PowerShell(winget install --id Git.Git -e --source winget --accept-package-agreements --accept-source-agreements)",
+      "PowerShell($env:PATH += \";C:\\\\Program Files\\\\Git\\\\bin\"; cd c:\\\\Users\\\\jorge\\\\organize-with-mary; git init; if \\($?\\) { git add . }; if \\($?\\) { git commit -m \"Initial Organize with Mary site\" })",
+      "PowerShell($env:PATH += \";C:\\\\Program Files\\\\Git\\\\bin\"; cd c:\\\\Users\\\\jorge\\\\organize-with-mary; git config user.name \"Mary\"; git config user.email \"realjorgemero@gmail.com\"; git rm -r --cached . -q; git add .; git commit -m \"Initial Organize with Mary site\")"
+    ]
+  }
+}

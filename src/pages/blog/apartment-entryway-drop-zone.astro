@@ -1,0 +1,142 @@
+---
+import ArticleLayout from '../../components/ArticleLayout.astro';
+import ProductRecommendationCard from '../../components/ProductRecommendationCard.astro';
+
+const toc = [
+  { label: 'What a drop zone actually needs',     href: '#what' },
+  { label: 'Hooks and coat storage',              href: '#hooks' },
+  { label: 'Shoe storage at the door',            href: '#shoes' },
+  { label: 'Keys, mail, and small items',         href: '#keys' },
+  { label: 'Keeping the drop zone working',       href: '#maintaining' },
+];
+
+const faqs = [
+  {
+    question: 'What\'s the minimum for a functional drop zone?',
+    answer: 'Three things: hooks for bags and coats, a spot for shoes, and a surface or small organizer for keys and mail. You don\'t need a dedicated room or a built-in bench. A hook rack, a small shoe tray, and a wall-mounted key hook handles 90% of what a drop zone needs to do.',
+  },
+  {
+    question: 'Can I make a drop zone without a real entryway?',
+    answer: 'Yes. Most apartment doors open directly into the living area — that\'s the norm, not the exception. An over-door hook rack on the back of the door handles coats and bags. A small bench or shoe tray just inside the door handles shoes. A key hook near the door handles keys. None of this requires a dedicated entryway.',
+  },
+  {
+    question: 'How do I keep the entryway from getting messy again?',
+    answer: 'The system has to match the habit. If you always drop your bag on the floor, put a hook exactly where the bag lands. If mail piles up, put a small tray at eye level right next to the door. The easier the system is to use, the more likely you\'ll actually use it.',
+  },
+  {
+    question: 'What\'s the best option for a very narrow entryway or hallway?',
+    answer: 'Over-door hooks on the back of the door are the most space-efficient option — they add hanging storage without taking up any floor or wall space. A slim floating shelf above door height (if the lease allows picture hooks) works for keys and mail. Tall, narrow shoe racks take less floor space than wide flat trays.',
+  },
+];
+
+const relatedPosts = [
+  { title: 'A Simple Weekly Reset Routine for Small Apartments',  href: '/blog/weekly-reset-routine-small-apartment',   category: 'reset' as const },
+  { title: 'Best No-Drill Storage Ideas for Renters',             href: '/blog/no-drill-storage-ideas-for-renters',     category: 'reset' as const },
+];
+---
+
+<ArticleLayout
+  title="Apartment Entryway Drop Zone Ideas for Small Spaces — Organize with Mary"
+  description="No real entryway? Here's how to create a functional drop zone in any apartment — no-drill coat hooks, shoe storage, key organizers, and small space solutions for renters."
+  h1="Apartment Entryway Drop Zone Ideas for Small Spaces"
+  category="Entryway Organization"
+  categoryColor="reset"
+  readTime="5 min read"
+  {toc}
+  {faqs}
+  {relatedPosts}
+>
+
+  <p>
+    Most apartment doors don't open into a real entryway. They open straight into your living room, or into a narrow strip of hallway that immediately becomes a dumping ground for bags, shoes, keys, and whatever else you walked in carrying.
+  </p>
+  <p>
+    A drop zone fixes that. It's not a room — it's a small system right at the door that gives everything a home so it doesn't spread across the rest of your apartment.
+  </p>
+
+  <blockquote>
+    <strong>Match the system to the habit:</strong> Before buying anything, notice where things actually land when you walk in. That's where the system needs to go. A hook six feet from the door won't change where bags end up.
+  </blockquote>
+
+  <h2 id="what">What a Drop Zone Actually Needs</h2>
+  <p>
+    A functional drop zone has four components. You don't need all four to start — two or three will dramatically improve the entryway.
+  </p>
+  <ul>
+    <li><strong>Hooks</strong> — for coats, bags, and anything you carry in and out regularly</li>
+    <li><strong>Shoe storage</strong> — a tray, a rack, or a cubby that keeps shoes contained and off the main floor area</li>
+    <li><strong>A surface or organizer for small items</strong> — keys, sunglasses, mail, and anything that needs to live near the door</li>
+    <li><strong>A mirror</strong> (optional) — useful near the door for quick checks before leaving, and makes a narrow entry feel larger</li>
+  </ul>
+
+  <h2 id="hooks">Hooks and Coat Storage</h2>
+  <p>
+    Hooks are the foundation of any drop zone. They should be at the door — not in the bedroom, not across the room. The easier they are to use, the more consistently they get used.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={1}
+    name="Over-the-Door Hook Rack (Heavy-Duty, 6–8 Hooks)"
+    bestFor="Coats, bags, scarves, and umbrellas near the front door"
+    whyItHelps="Goes directly on the back of the front door — the most convenient location possible. Holds six to eight items without taking any wall or floor space. Stays out of sight when the door is open."
+    renterNote="Hooks over the door with no screws. Remove in seconds when moving."
+    watchOut="Measure the door thickness — most over-door racks fit doors up to 1.75 inches. Check the weight capacity if you're hanging heavy coats."
+    category="reset"
+  />
+
+  <h2 id="shoes">Shoe Storage at the Door</h2>
+  <p>
+    Shoes are usually the biggest visual contributor to entryway chaos. They need a spot that's easy to use — easy enough that you'll actually put them there instead of kicking them to the side.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={2}
+    name="Boot Tray or Entryway Shoe Tray"
+    bestFor="Keeping shoes contained and protecting floors near the door"
+    whyItHelps="A simple tray with slightly raised edges corrals shoes in one spot, catches water and dirt, and signals clearly where shoes belong. It's the lowest-friction shoe solution possible."
+    renterNote="Sits on the floor with no installation. Move it when you clean."
+    watchOut="Measure the available floor space near your door before buying — trays come in several sizes."
+    category="reset"
+  />
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={3}
+    name="Slim Vertical Shoe Rack (3–5 Tiers)"
+    bestFor="Narrow entries where a flat tray takes too much floor space"
+    whyItHelps="Holds eight to fifteen pairs of shoes in a vertical column instead of spreading them across the floor. Takes up about 10 inches of floor depth — much less than a standard shoe bench."
+    renterNote="Free-standing. No mounting or tools needed."
+    watchOut="Taller shoes (boots) may not fit on standard tier spacing — check the slot height before ordering."
+    category="reset"
+  />
+
+  <h2 id="keys">Keys, Mail, and Small Items</h2>
+  <p>
+    Keys and mail have a tendency to spread. Without a designated spot, they end up on the counter, on the coffee table, and eventually lost. A small organizer near the door solves this permanently.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={4}
+    name="Wall-Mounted Key and Mail Organizer"
+    bestFor="Keys, sunglasses, mail, and small daily-carry items near the door"
+    whyItHelps="Combines hooks for keys with a small tray or mail slot above. Everything that comes in and goes out with you daily lives in one 6-inch spot on the wall near the door."
+    renterNote="Small adhesive-mount options are available for renters who can't use screws. Check the weight limit for the adhesive version."
+    watchOut="If using an adhesive mount, the wall needs to be smooth and painted. Textured walls won't hold."
+    category="reset"
+  />
+
+  <h2 id="maintaining">Keeping the Drop Zone Working</h2>
+  <p>
+    A drop zone only works if the system is easy enough to use every time you walk in. A few habits that help:
+  </p>
+  <ul>
+    <li><strong>Empty the mail tray weekly.</strong> A full mail tray gets ignored. An empty one gets used.</li>
+    <li><strong>Limit the shoe tray.</strong> One person, two or three pairs maximum in the tray at a time. The rest go in the closet.</li>
+    <li><strong>Keep hooks available.</strong> If every hook is always full, add one more hook or move seasonal coats to the closet.</li>
+    <li><strong>Include the drop zone in your weekly reset.</strong> Five minutes on Sunday keeps it from becoming a dumping ground again.</li>
+  </ul>
+
+</ArticleLayout>

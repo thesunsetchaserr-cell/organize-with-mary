@@ -1,0 +1,140 @@
+---
+import ArticleLayout from '../../components/ArticleLayout.astro';
+import ProductRecommendationCard from '../../components/ProductRecommendationCard.astro';
+
+const toc = [
+  { label: 'How to allocate your $50',       href: '#budget' },
+  { label: 'Countertop organization',         href: '#countertop' },
+  { label: 'Under-sink storage',              href: '#under-sink' },
+  { label: 'Behind-the-door solutions',       href: '#door' },
+  { label: 'Common mistakes to avoid',        href: '#mistakes' },
+];
+
+const faqs = [
+  {
+    question: 'What\'s the single best first purchase for a small bathroom?',
+    answer: 'If I had to pick one: a clear acrylic countertop organizer for $12–15. It doesn\'t add more storage — it just makes what you already have visible, accessible, and calm-looking. Once the counter is organized, you can see what else actually needs fixing.',
+  },
+  {
+    question: 'Can I really organize my bathroom for under $50?',
+    answer: 'For most small rental bathrooms, yes. You usually don\'t need a full shelving system — you need the right two or three targeted pieces. An under-sink organizer, a countertop tray, and an over-door hook rack covers most storage gaps and comes in under $50 total.',
+  },
+  {
+    question: 'Is an over-toilet shelf worth it in a rental?',
+    answer: 'If you\'re short on storage, yes — but it\'s not always the first priority. Address the counter and under-sink first. An over-toilet etagere is worth it when you have extra towels, toiletries, or decorative items that have nowhere to go.',
+  },
+  {
+    question: 'What\'s the most common bathroom storage mistake?',
+    answer: 'Buying more storage before clearing out what\'s already there. Pull everything out of your bathroom first. Most people find they\'re storing expired products, duplicates, and things that belong somewhere else. Editing first makes $50 go a lot further.',
+  },
+];
+
+const relatedPosts = [
+  { title: '17 Renter-Friendly Bathroom Storage Ideas That Don\'t Damage Walls', href: '/blog/renter-friendly-bathroom-storage', category: 'bathroom' as const },
+  { title: 'Under-Sink Organization Ideas for Small Apartments',                  href: '/blog/under-sink-organization-small-apartments', category: 'bathroom' as const },
+];
+---
+
+<ArticleLayout
+  title="Small Bathroom Organization Ideas Under $50 — Organize with Mary"
+  description="Organize your small rental bathroom for under $50 with targeted renter-friendly storage products. Counter organizers, under-sink solutions, and over-door storage."
+  h1="Small Bathroom Organization Ideas Under $50"
+  category="Bathroom Storage"
+  categoryColor="bathroom"
+  readTime="5 min read"
+  {toc}
+  {faqs}
+  {relatedPosts}
+>
+
+  <p>
+    A well-organized bathroom doesn't require a renovation or a big budget. Most of the best renter-friendly bathroom organizers are under $20 each — and you only need a few of the right ones.
+  </p>
+  <p>
+    The key is spending strategically. You don't need to buy everything. Identify the one or two spots that cause you the most frustration and fix those first.
+  </p>
+
+  <blockquote>
+    <strong>Before you buy anything:</strong> Pull everything out and edit first. Expired products, hotel-size bottles you'll never use, and duplicates of things you only need one of — removing those often solves the problem before you spend a dollar.
+  </blockquote>
+
+  <h2 id="budget">How to Allocate Your $50</h2>
+  <p>
+    Here's a rough priority order based on what causes the most frustration in most small bathrooms:
+  </p>
+  <ul>
+    <li><strong>Counter organizer</strong> (~$12–18) — highest visible impact for the least money</li>
+    <li><strong>Under-sink organizer</strong> (~$18–25) — solves the biggest functional problem</li>
+    <li><strong>Over-door hook rack</strong> (~$10–15) — adds towel and bag hanging without drilling</li>
+    <li><strong>Shower organizer</strong> (~$20–30) — if the shower is the main chaos zone</li>
+  </ul>
+  <p>
+    Pick two based on where your bathroom is most disorganized. Those two will do more than a cabinet full of matching bins.
+  </p>
+
+  <h2 id="countertop">Countertop Organization</h2>
+  <p>
+    If your counter is 10–12 inches wide and you're trying to fit skincare, hair tools, toothbrushes, and soap — the problem isn't that you have too much stuff. It's that nothing has a specific place.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={1}
+    name="Acrylic Countertop Organizer (Tiered, Clear)"
+    bestFor="Skincare, makeup, daily-use toiletries on a small counter"
+    whyItHelps="Puts everything at eye level in a clear, structured layout. You stop hunting for things, and the counter looks calm even when full. Clear acrylic doesn't visually crowd a small space."
+    renterNote="No installation. Sits directly on the counter and lifts off cleanly."
+    category="bathroom"
+  />
+
+  <h2 id="under-sink">Under-Sink Storage</h2>
+  <p>
+    The under-sink cabinet is the most wasted space in most bathrooms. Pipes cut through the middle, things fall over in the back, and you can't see what's in there. The right organizer changes all of that.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={2}
+    name="U-Shaped Under-Sink Organizer"
+    bestFor="Creating a real shelf around the pipe under the bathroom sink"
+    whyItHelps="The curved cutout wraps around the sink pipe and gives you a full shelf surface on either side. Doubles the usable space without any installation."
+    renterNote="No tools, no screws. Set it in and start filling it."
+    watchOut="Measure the pipe height from the cabinet floor — some organizers sit too low and won't fit around taller pipes."
+    category="bathroom"
+  />
+
+  <h2 id="door">Behind-the-Door Solutions</h2>
+  <p>
+    The back of your bathroom door is one of the most overlooked storage surfaces in a rental. An over-door hook rack adds towel hanging, robe hooks, and bag storage in a space that was previously doing nothing.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={3}
+    name="Over-Door Towel Rack (Multi-Bar)"
+    bestFor="Hanging bath towels, robes, and extra hand towels"
+    whyItHelps="Uses the full height of your door to hang three to four towels. Most models fit doors up to 1.5 inches thick. Takes towels completely off the floor and frees up the single wall-mounted bar."
+    renterNote="Hooks over the top of a standard door. No screws, no holes. Remove when you move."
+    category="bathroom"
+  />
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={4}
+    name="Tension-Pole Shower Caddy"
+    bestFor="Renters with a tub/shower combo who need shower organization"
+    whyItHelps="Floor-to-ceiling tension holds two or three shelves of products. No drilling into tile, no suction that fails after a week. Keeps the tub ledge completely clear."
+    renterNote="Zero wall contact. Installs and removes in under 10 minutes."
+    watchOut="Measure floor-to-ceiling height before buying. Tighten the tension thoroughly or it will shift."
+    category="bathroom"
+  />
+
+  <h2 id="mistakes">Common Small Bathroom Mistakes to Avoid</h2>
+  <ul>
+    <li><strong>Buying more storage before editing.</strong> Organizing expired products and duplicates just wastes money. Pull everything out first.</li>
+    <li><strong>Prioritizing looks over function.</strong> A beautiful basket you have to unpack every time you need something is not actually organized.</li>
+    <li><strong>Using suction cups on textured tile.</strong> They fail. Every time. Use tension, over-door, or freestanding solutions instead.</li>
+    <li><strong>Ignoring the door.</strong> It's prime storage for towels, robes, and small organizers — and most renters walk past it every day.</li>
+  </ul>
+
+</ArticleLayout>

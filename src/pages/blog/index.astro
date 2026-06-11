@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const articles = [
+  {
+    title:    '17 Renter-Friendly Bathroom Storage Ideas That Don\'t Damage Walls',
+    excerpt:  'No-drill shelves, over-the-toilet towers, under-sink organizers, and slim rolling carts — without losing your deposit.',
+    href:     '/blog/renter-friendly-bathroom-storage',
+    category: 'Bathroom',
+    catColor: 'bathroom',
+    readTime: '7 min read',
+    icon:     '🪥',
+  },
+  {
+    title:    'Small Apartment Kitchen Organization Ideas for Renters With No Pantry',
+    excerpt:  'Tiny cabinets, zero counter space, no pantry. Here\'s how to create a calm, functional kitchen in a small rental apartment.',
+    href:     '/blog/small-apartment-kitchen-organization',
+    category: 'Kitchen',
+    catColor: 'kitchen',
+    readTime: '8 min read',
+    icon:     '🍳',
+  },
+  {
+    title:    'How to Organize a Tiny Closet Without Custom Shelving',
+    excerpt:  'You don\'t need a built-in system. Here\'s how to maximize every inch of a small rental closet with no permanent changes.',
+    href:     '/blog/tiny-closet-organization',
+    category: 'Closet',
+    catColor: 'closet',
+    readTime: '7 min read',
+    icon:     '👗',
+  },
+  {
+    title:    'Best No-Drill Storage Ideas for Renters',
+    excerpt:  'Every idea on this list installs without tools. Over-door racks, tension rods, freestanding shelves — real storage, zero holes.',
+    href:     '/blog/no-drill-storage-ideas-for-renters',
+    category: 'No-Drill',
+    catColor: 'reset',
+    readTime: '5 min read',
+    icon:     '🔧',
+  },
+  {
+    title:    'Small Bathroom Organization on a Budget (Under $50)',
+    excerpt:  'Four targeted upgrades that transform a cramped bathroom — countertop organizer, under-sink system, towel rack, and shower caddy.',
+    href:     '/blog/small-bathroom-organization-under-50',
+    category: 'Bathroom',
+    catColor: 'bathroom',
+    readTime: '5 min read',
+    icon:     '🪥',
+  },
+  {
+    title:    'No Pantry? Small Kitchen Organization Ideas That Actually Work',
+    excerpt:  'No pantry doesn\'t mean no storage. A rolling cart, cabinet-door rack, and clear bins create a dedicated pantry zone anywhere.',
+    href:     '/blog/no-pantry-kitchen-organization',
+    category: 'Kitchen',
+    catColor: 'kitchen',
+    readTime: '6 min read',
+    icon:     '🍳',
+  },
+  {
+    title:    'Under-Sink Organization Ideas for Small Apartments',
+    excerpt:  'Work around the pipe, pull out for access, and stop losing things in the back. Bathroom and kitchen covered.',
+    href:     '/blog/under-sink-organization-small-apartments',
+    category: 'Under-Sink',
+    catColor: 'bathroom',
+    readTime: '5 min read',
+    icon:     '💧',
+  },
+  {
+    title:    'Small Closet Storage Ideas for Renters',
+    excerpt:  'One rod, one shelf, a floor. Here\'s how to triple the capacity of a basic rental closet without touching the walls.',
+    href:     '/blog/small-closet-storage-ideas-renters',
+    category: 'Closet',
+    catColor: 'closet',
+    readTime: '5 min read',
+    icon:     '👗',
+  },
+  {
+    title:    'Apartment Entryway Drop Zone Ideas for Small Spaces',
+    excerpt:  'No real entryway? Build a drop zone anyway. Hooks, shoe storage, key organizers — all no-drill and renter-safe.',
+    href:     '/blog/apartment-entryway-drop-zone',
+    category: 'Entryway',
+    catColor: 'reset',
+    readTime: '5 min read',
+    icon:     '🚪',
+  },
+  {
+    title:    'A Simple Weekly Reset Routine for Small Apartments',
+    excerpt:  '25 minutes, four rooms. How to stay organized every week without turning it into a whole-day cleaning session.',
+    href:     '/blog/weekly-reset-routine-small-apartment',
+    category: 'Reset Routines',
+    catColor: 'reset',
+    readTime: '5 min read',
+    icon:     '🏠',
+  },
+];
+
+const chips = ['Bathroom', 'Kitchen', 'Closet', 'No-Drill', 'Under-Sink', 'Entryway', 'Reset Routines', 'Small Apartment'];
+const chipColors: Record<string, string> = {
+  'Bathroom':       'badge--bathroom',
+  'Kitchen':        'badge--kitchen',
+  'Closet':         'badge--closet',
+  'No-Drill':       'badge--reset',
+  'Under-Sink':     'badge--bathroom',
+  'Entryway':       'badge--reset',
+  'Reset Routines': 'badge--reset',
+  'Small Apartment':'badge--neutral',
+};
+---
+
+<BaseLayout
+  title="Organization Ideas for Small Apartments & Renters — Organize with Mary"
+  description="Renter-friendly organization guides for small apartments — bathroom storage, kitchen organization, closet systems, and more. No drilling required."
+>
+
+  <!-- Hero -->
+  <section class="blog-hero bg-linen">
+    <div class="container--content">
+      <span class="section-label">Organization Guides</span>
+      <h1 class="blog-h1">Organization Ideas for Small Apartments &amp; Renters</h1>
+      <p class="blog-intro text-muted">
+        Practical, calm guides for renters and busy women who want to organize their small space without the overwhelm, damage, or expensive custom solutions.
+      </p>
+
+      <!-- Category chips -->
+      <div class="chip-row" role="list" aria-label="Categories">
+        {chips.map(chip => (
+          <span role="listitem" class={`badge ${chipColors[chip]} chip`}>{chip}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Article grid -->
+  <section class="blog-list bg-ivory">
+    <div class="container">
+      <div class="blog-grid">
+        {articles.map(a => (
+          <article class="blog-card card">
+            <a href={a.href} class="blog-thumb-link" tabindex="-1" aria-hidden="true">
+              <div class={`vis-card vis-card--landscape vis-card--${a.catColor} blog-thumb`}>
+                <span class="vis-card__icon blog-thumb-icon">{a.icon}</span>
+                <p class="vis-card__sub">{a.category}</p>
+              </div>
+            </a>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class={`badge badge--${a.catColor}`}>{a.category}</span>
+                <span class="text-muted text-xs">{a.readTime}</span>
+              </div>
+              <h2 class="blog-card-title">
+                <a href={a.href}>{a.title}</a>
+              </h2>
+              <p class="blog-card-excerpt text-muted">{a.excerpt}</p>
+              <a href={a.href} class="blog-card-cta">Read the guide →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    headline="Free Small Space Storage Shopping Checklist"
+    body="Get Mary's room-by-room checklist of renter-friendly storage products — free. No spam, no fluff, just the exact items that help renters organize without drilling."
+    variant="linen"
+    size="compact"
+  />
+
+</BaseLayout>
+
+<style>
+  .blog-hero { padding-block: var(--s-10); }
+  .blog-hero .section-label { margin-bottom: var(--s-4); }
+  .blog-h1 { font-size: clamp(1.6rem, 5vw, 2.4rem); margin-bottom: var(--s-4); }
+  .blog-intro { font-size: var(--text-lg); margin-bottom: var(--s-6); max-width: 520px; }
+
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+  }
+  .chip { font-size: var(--text-xs); padding: 5px 12px; cursor: default; }
+
+  .blog-list { padding-block: var(--s-8) var(--section-py); }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--s-5);
+  }
+
+  .blog-card { display: flex; flex-direction: column; }
+  .blog-thumb-link { display: block; }
+  .blog-thumb { border-radius: var(--r-lg) var(--r-lg) 0 0; min-height: 160px; }
+  .blog-thumb-icon { font-size: 2.5rem; }
+
+  .blog-card-body {
+    padding: var(--s-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    flex: 1;
+  }
+
+  .blog-card-meta { display: flex; align-items: center; gap: var(--s-3); }
+
+  .blog-card-title {
+    font-size: var(--text-xl);
+    line-height: 1.28;
+    margin: 0;
+  }
+  .blog-card-title a { color: var(--c-text); text-decoration: none; }
+  .blog-card-title a:hover { color: var(--c-clay); }
+
+  .blog-card-excerpt { font-size: var(--text-base); line-height: 1.6; margin: 0; }
+
+  .blog-card-cta {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--c-clay);
+    text-decoration: none;
+    margin-top: auto;
+  }
+  .blog-card-cta:hover { color: var(--c-clay-dark); }
+
+  @media (max-width: 480px) {
+    .blog-hero { padding-block: var(--s-8); }
+    .blog-intro { font-size: var(--text-base); }
+    .blog-grid { gap: var(--s-4); }
+    .blog-card-title { font-size: var(--text-lg); }
+    .blog-card-body { padding: var(--s-4); }
+    /* Show only the first ~2 lines of excerpt on mobile */
+    .blog-card-excerpt {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+</style>

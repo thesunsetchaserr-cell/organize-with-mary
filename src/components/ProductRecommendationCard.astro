@@ -1,0 +1,226 @@
+---
+interface Props {
+  name: string;
+  bestFor: string;
+  whyItHelps: string;
+  renterNote: string;
+  watchOut?: string;
+  affiliateHref?: string;
+  buttonText?: string;
+  number?: number;
+  category?: 'bathroom' | 'kitchen' | 'closet' | 'reset' | 'default';
+}
+
+const {
+  name,
+  bestFor,
+  whyItHelps,
+  renterNote,
+  watchOut,
+  affiliateHref = '#',
+  buttonText    = 'View Product',
+  number,
+  category      = 'default',
+} = Astro.props;
+
+const isPlaceholder = affiliateHref.startsWith('#');
+
+const accentMap: Record<string, string> = {
+  bathroom: 'var(--c-bathroom)',
+  kitchen:  'var(--c-kitchen)',
+  closet:   'var(--c-closet)',
+  reset:    'var(--c-reset)',
+  default:  'var(--c-clay)',
+};
+const accent = accentMap[category];
+---
+
+<!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+<div class="prod-card" style={`--cat-color: ${accent}`}>
+  {number && <span class="prod-num" aria-hidden="true">{number}</span>}
+
+  <div class="prod-header">
+    <h3 class="prod-name">{name}</h3>
+  </div>
+
+  <dl class="prod-details">
+    <div class="prod-row prod-row--best">
+      <dt>Best for</dt>
+      <dd>{bestFor}</dd>
+    </div>
+    <div class="prod-row">
+      <dt>Why it helps</dt>
+      <dd>{whyItHelps}</dd>
+    </div>
+    <div class="prod-row prod-row--renter">
+      <dt>🏠 Renter-friendly</dt>
+      <dd>{renterNote}</dd>
+    </div>
+    {watchOut && (
+      <div class="prod-row prod-row--watch">
+        <dt>⚠️ Watch out for</dt>
+        <dd>{watchOut}</dd>
+      </div>
+    )}
+  </dl>
+
+  <div class="prod-footer">
+    <a
+      href={affiliateHref}
+      class="btn btn--primary prod-btn"
+      target={isPlaceholder ? undefined : '_blank'}
+      rel={isPlaceholder ? undefined : 'noopener noreferrer nofollow'}
+      data-affiliate-placeholder={isPlaceholder ? 'true' : undefined}
+      aria-label={`${buttonText} — ${name}${isPlaceholder ? '' : ' (affiliate link)'}`}
+    >
+      {buttonText} →
+    </a>
+    <p class="prod-disclosure">Affiliate link — commission at no extra cost to you.</p>
+  </div>
+</div>
+
+<style>
+  .prod-card {
+    position: relative;
+    background: var(--c-bg-card);
+    border: 1px solid var(--c-border-light);
+    border-radius: var(--r-lg);
+    border-top: 3px solid var(--cat-color, var(--c-clay));
+    padding: var(--s-6);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--t);
+    margin-bottom: var(--s-6);
+  }
+  .prod-card:hover { box-shadow: var(--shadow-md); }
+
+  .prod-num {
+    position: absolute;
+    top: -13px;
+    left: var(--s-5);
+    background: var(--cat-color, var(--c-clay));
+    color: var(--c-white);
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .prod-header { margin-bottom: var(--s-4); }
+
+  .prod-name {
+    font-size: var(--text-xl);
+    font-family: var(--font-heading);
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .prod-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-4);
+    margin-bottom: var(--s-5);
+  }
+
+  .prod-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: var(--s-2) var(--s-3);
+    line-height: 1.65;
+  }
+
+  .prod-row dt {
+    font-weight: 700;
+    color: var(--c-text-muted);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-top: 3px;
+    line-height: 1.4;
+  }
+
+  .prod-row dd { margin: 0; color: var(--c-text); font-size: var(--text-base); line-height: 1.65; }
+
+  .prod-row--best {
+    background: var(--c-bg-linen);
+    border-radius: var(--r-sm);
+    padding: var(--s-2) var(--s-3);
+    border-left: 2px solid var(--cat-color, var(--c-clay));
+  }
+  .prod-row--best dd  { font-weight: 600; }
+
+  .prod-row--renter {
+    background: var(--c-bg-linen);
+    border-radius: var(--r-sm);
+    padding: var(--s-2) var(--s-3);
+    align-items: start;
+  }
+  .prod-row--renter dt { color: var(--c-kitchen); }
+  .prod-row--renter dd { font-style: italic; color: var(--c-text-muted); }
+
+  .prod-row--watch {
+    background: #FFF8E1;
+    border-radius: var(--r-sm);
+    padding: var(--s-2) var(--s-3);
+    align-items: start;
+  }
+  .prod-row--watch dt { color: #C77B00; }
+  .prod-row--watch dd { color: var(--c-text-muted); font-size: var(--text-sm); }
+
+  .prod-footer { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-2); }
+
+  .prod-btn {
+    background: var(--cat-color, var(--c-clay));
+    border-color: var(--cat-color, var(--c-clay));
+    width: 100%;
+    justify-content: center;
+  }
+  .prod-btn:hover { filter: brightness(0.88); color: var(--c-white); }
+
+  .prod-disclosure {
+    font-size: var(--text-xs);
+    color: var(--c-text-light);
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Stack label above value at 520px and below */
+  @media (max-width: 520px) {
+    .prod-card { padding: var(--s-5); }
+
+    .prod-details { gap: 0; }
+
+    /* Rows stacked, with dividers between them */
+    .prod-row {
+      grid-template-columns: 1fr;
+      gap: 3px;
+      padding-block: var(--s-4);
+      border-top: 1px solid var(--c-border-light);
+    }
+    .prod-row:first-child { border-top: none; padding-top: 0; }
+
+    /* Colored rows keep their own padding — remove the inherited block padding */
+    .prod-row--best,
+    .prod-row--renter,
+    .prod-row--watch {
+      border-top: none;
+      padding-block: var(--s-2);
+      margin-block: var(--s-2);
+    }
+
+    /* Make labels 13px — more readable than 11.5px when full-width */
+    .prod-row dt {
+      padding-top: 0;
+      margin-bottom: 3px;
+      font-size: 0.8125rem; /* 13px */
+      letter-spacing: 0.06em;
+    }
+
+    .prod-footer { margin-top: var(--s-4); }
+  }
+</style>

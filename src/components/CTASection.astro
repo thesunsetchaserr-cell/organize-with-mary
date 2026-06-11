@@ -1,0 +1,67 @@
+---
+interface Props {
+  headline?: string;
+  body?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  variant?: 'linen' | 'clay' | 'cream';
+  size?: 'default' | 'compact';
+}
+
+const {
+  headline     = 'Get the Free Small Space Storage Checklist',
+  body         = "A room-by-room checklist of renter-friendly storage products. Organize your kitchen, bathroom, closet, and entryway — without drilling, damage, or wasted money.",
+  primaryLabel = 'Download the Free Checklist',
+  primaryHref  = '/free-small-space-storage-checklist',
+  secondaryLabel,
+  secondaryHref,
+  variant      = 'linen',
+  size         = 'default',
+} = Astro.props;
+---
+
+<section class={`cta-section cta-section--${variant} cta-section--${size}`}>
+  <div class="container--narrow text-center">
+    <span class="section-label">Free Download</span>
+    <h2 class="cta-hl">{headline}</h2>
+    <p class="cta-body text-muted">{body}</p>
+    <div class="cta-acts">
+      <a href={primaryHref} class="btn btn--primary btn--lg btn--full-mobile">{primaryLabel}</a>
+      {secondaryLabel && secondaryHref && (
+        <a href={secondaryHref} class="btn btn--secondary btn--lg">{secondaryLabel}</a>
+      )}
+    </div>
+    <p class="trust-note">No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<style>
+  .cta-section { padding-block: var(--section-py); }
+  .cta-section--linen  { background: var(--c-bg-linen); }
+  .cta-section--clay   { background: var(--c-clay-light); }
+  .cta-section--cream  { background: var(--c-bg-cream); }
+  .cta-section--compact { padding-block: var(--s-10); }
+
+  .cta-section .section-label { margin-bottom: var(--s-3); }
+
+  .cta-hl { font-size: clamp(1.3rem, 4vw, 2rem); margin-bottom: var(--s-4); }
+
+  .cta-body { margin-bottom: var(--s-6); max-width: 440px; margin-inline: auto; font-size: var(--text-base); }
+
+  .cta-acts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    justify-content: center;
+    margin-bottom: var(--s-3);
+  }
+
+  .btn--full-mobile { width: 100%; max-width: 360px; }
+
+  @media (max-width: 480px) {
+    .cta-acts { flex-direction: column; align-items: stretch; }
+    .btn--full-mobile { max-width: none; }
+  }
+</style>

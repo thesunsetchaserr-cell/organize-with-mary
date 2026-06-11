@@ -1,0 +1,142 @@
+---
+import ArticleLayout from '../../components/ArticleLayout.astro';
+import ProductRecommendationCard from '../../components/ProductRecommendationCard.astro';
+
+const toc = [
+  { label: 'Why a routine works better than a big clean',  href: '#why' },
+  { label: 'The 25-minute weekly reset',                   href: '#routine' },
+  { label: 'Kitchen reset (5–7 min)',                      href: '#kitchen' },
+  { label: 'Bathroom reset (5 min)',                       href: '#bathroom' },
+  { label: 'Bedroom and closet reset (5 min)',             href: '#bedroom' },
+  { label: 'Living space reset (5 min)',                   href: '#living' },
+  { label: 'Staying consistent',                           href: '#consistent' },
+];
+
+const faqs = [
+  {
+    question: 'How is a weekly reset different from cleaning?',
+    answer: 'Cleaning addresses dirt and surfaces — scrubbing, vacuuming, wiping. A reset addresses clutter and displacement — putting things back where they belong, clearing surfaces, and restoring the visual calm of a room. You can do both in the same session, but the reset is what prevents the apartment from feeling constantly disorganized between deep cleans.',
+  },
+  {
+    question: 'What if I fall off the routine for a few weeks?',
+    answer: 'You start again. A reset routine is not a streak — skipping two weeks doesn\'t mean the system is broken. It just means this week\'s reset will take 35 minutes instead of 25. The point is to have a reliable starting point, not to maintain a perfect record.',
+  },
+  {
+    question: 'What\'s the best day and time for a weekly reset?',
+    answer: 'The day that\'s already natural. For most people that\'s Sunday afternoon or Friday evening — end of the week before you start fresh. The specific time matters less than doing it at the same time every week so it becomes automatic.',
+  },
+  {
+    question: 'Is a weekly reset really enough to stay organized?',
+    answer: 'For a small apartment, yes — if you\'ve set up the right storage systems. If everything has a home and you spend 25 minutes a week returning things to their homes, the apartment stays in good shape. A weekly reset doesn\'t replace good storage; it maintains it.',
+  },
+];
+
+const relatedPosts = [
+  { title: 'Apartment Entryway Drop Zone Ideas for Small Spaces', href: '/blog/apartment-entryway-drop-zone',  category: 'reset' as const },
+  { title: 'How to Organize a Tiny Closet Without Custom Shelving', href: '/blog/tiny-closet-organization',  category: 'closet' as const },
+];
+---
+
+<ArticleLayout
+  title="A Simple Weekly Reset Routine for Small Apartments — Organize with Mary"
+  description="A 25-minute weekly reset routine for small apartments — room by room. Keep your kitchen, bathroom, bedroom, and living area organized without spending hours cleaning."
+  h1="A Simple Weekly Reset Routine for Small Apartments"
+  category="Reset Routines"
+  categoryColor="reset"
+  readTime="5 min read"
+  {toc}
+  {faqs}
+  {relatedPosts}
+>
+
+  <p>
+    Organization isn't a one-time project. It's what happens in the 25 minutes you spend every week putting things back where they belong before the week starts again.
+  </p>
+  <p>
+    A small apartment is easier to maintain than a larger one — fewer surfaces, less square footage, fewer spots for things to pile up. A simple weekly routine keeps it that way without turning into a whole-day event.
+  </p>
+
+  <blockquote>
+    <strong>The reset works best if storage is already set up:</strong> A reset routine puts things back in their homes. If nothing has a home yet — if you're returning items to random cabinets and surfaces — the routine won't stick. The storage systems come first; the reset maintains them.
+  </blockquote>
+
+  <h2 id="why">Why a Routine Works Better Than a Big Clean</h2>
+  <p>
+    Most people wait until the apartment feels overwhelming, then do a big multi-hour clean that restores order for about four days. The cycle repeats. Nothing gets better.
+  </p>
+  <p>
+    A weekly reset breaks the cycle. Twenty-five minutes is short enough to actually do every week. Done consistently, it keeps the apartment from ever reaching the "overwhelming" state in the first place.
+  </p>
+
+  <h2 id="routine">The 25-Minute Weekly Reset</h2>
+  <p>
+    Move room by room. Set a timer if it helps. The goal is to restore — not to deep clean. Surfaces clear, things returned to their homes, nothing left out that doesn't belong out.
+  </p>
+
+  <h2 id="kitchen">Kitchen Reset (5–7 Minutes)</h2>
+  <ul>
+    <li>Clear and wipe the counter — every item either goes back in its place or gets dealt with</li>
+    <li>Check the sink — dishes washed or loaded, nothing soaking</li>
+    <li>Wipe the stovetop quickly if it needs it</li>
+    <li>Empty and replace the trash if it's full</li>
+    <li>Check the pantry zone — anything out of place goes back</li>
+  </ul>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={1}
+    name="Portable Cleaning Caddy (Carry Supplies Room to Room)"
+    bestFor="Keeping all your cleaning supplies together as you move through the apartment"
+    whyItHelps="A small caddy holds your spray bottles, cloths, and supplies so you can carry everything from room to room in one trip. No walking back to the cabinet for the next product."
+    renterNote="No installation. Just a carried organizer. Move it between rooms as you reset."
+    category="reset"
+  />
+
+  <h2 id="bathroom">Bathroom Reset (5 Minutes)</h2>
+  <ul>
+    <li>Clear the counter — put every item back in its place</li>
+    <li>Wipe the mirror and sink with a cloth</li>
+    <li>Replace towels or fold them neatly</li>
+    <li>Empty the small trash can</li>
+    <li>Check the shower — nothing left on the tub ledge, caddy is organized</li>
+  </ul>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={2}
+    name="Small Bathroom Trash Can with Lid (2-3 Liter)"
+    bestFor="Keeping a dedicated trash can in the bathroom that gets emptied weekly"
+    whyItHelps="A small lidded trash can near the toilet or vanity prevents the pile-up of cotton rounds, packaging, and tissues on surfaces. The lid keeps it looking clean. Empty it every week as part of the reset."
+    renterNote="Free-standing. No mounting or installation needed."
+    category="bathroom"
+  />
+
+  <h2 id="bedroom">Bedroom and Closet Reset (5 Minutes)</h2>
+  <ul>
+    <li>Clear the nightstand — anything that drifted there gets returned</li>
+    <li>Make the bed or straighten covers</li>
+    <li>Hang or fold any clothes left out — nothing on the floor or chair</li>
+    <li>Check the closet — everything on its hanger, no pile building on the shelf</li>
+    <li>Return anything that belongs somewhere else</li>
+  </ul>
+
+  <h2 id="living">Living Space Reset (5 Minutes)</h2>
+  <ul>
+    <li>Clear main surfaces — coffee table, side tables, any horizontal surfaces</li>
+    <li>Return anything that wandered in from another room</li>
+    <li>Fluff cushions and straighten throws</li>
+    <li>Check the entryway drop zone — shoes in the tray, nothing on the floor</li>
+  </ul>
+
+  <h2 id="consistent">Staying Consistent</h2>
+  <p>
+    The hardest part of any routine is the first four weeks. After that, it becomes automatic. A few things that help:
+  </p>
+  <ul>
+    <li><strong>Do it at the same time each week.</strong> Sunday evening or Friday afternoon — pick a time and make it non-negotiable.</li>
+    <li><strong>Keep your supplies accessible.</strong> If the caddy is buried under the sink, you'll skip it. Keep it somewhere you'll grab it without thinking.</li>
+    <li><strong>Don't combine it with deep cleaning.</strong> A reset is not a deep clean. If you start scrubbing baseboards, you'll run out of energy and time. Reserve deep cleaning for monthly.</li>
+    <li><strong>Start with just the kitchen.</strong> If the full 25-minute routine feels like too much right now, start with just the kitchen reset. One room, five minutes. Build from there.</li>
+  </ul>
+
+</ArticleLayout>

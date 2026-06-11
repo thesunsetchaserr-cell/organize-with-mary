@@ -1,0 +1,194 @@
+---
+import ArticleLayout from '../../components/ArticleLayout.astro';
+import ProductRecommendationCard from '../../components/ProductRecommendationCard.astro';
+
+const toc = [
+  { label: 'Cabinet shelf risers and vertical space',         href: '#risers' },
+  { label: 'Pantry alternatives for no-pantry kitchens',      href: '#pantry' },
+  { label: 'Drawer dividers',                                href: '#drawers' },
+  { label: 'Spice storage for renters',                      href: '#spices' },
+  { label: 'Tupperware and containers',                      href: '#tupperware' },
+  { label: 'Under-sink kitchen organization',                href: '#under-sink' },
+  { label: 'Product recommendations',                        href: '#products' },
+  { label: 'Common small kitchen mistakes',                  href: '#mistakes' },
+];
+
+const faqs = [
+  {
+    question: 'How do you create pantry space in an apartment with no pantry?',
+    answer: 'A freestanding pantry cabinet, a rolling kitchen cart with shelves, or a dedicated shelving unit in a corner all work as pantry substitutes. The key is grouping dry goods in one dedicated area — not spreading them across multiple cabinets.',
+  },
+  {
+    question: 'What\'s the most impactful first step for a small kitchen?',
+    answer: 'Clear your counters completely. Every item needs to earn its place by being used daily. When your counter is clear, even the smallest kitchen feels dramatically more functional and calmer to work in.',
+  },
+  {
+    question: 'How do I organize a kitchen with only 2–3 cabinets?',
+    answer: 'Use shelf risers in every cabinet to double vertical space. Store less-used items up high and daily items at eye level. Use the backs of cabinet doors for small organizers. And be ruthless — if you have 8 mugs and use 3, donate the other 5.',
+  },
+  {
+    question: 'Is a rolling kitchen cart worth it in a small apartment?',
+    answer: 'For most renters, yes. A cart with shelves adds both counter space and storage at the same time, and it moves so you can tuck it away when not needed. It\'s one of the best value purchases for a small rental kitchen.',
+  },
+];
+
+const relatedPosts = [
+  { title: '17 Renter-Friendly Bathroom Storage Ideas That Don\'t Damage Walls', href: '/blog/renter-friendly-bathroom-storage', category: 'bathroom' as const },
+  { title: 'How to Organize a Tiny Closet Without Custom Shelving',              href: '/blog/tiny-closet-organization',          category: 'closet' as const },
+];
+---
+
+<ArticleLayout
+  title="Small Apartment Kitchen Organization Ideas for Renters With No Pantry"
+  description="Small apartment kitchen organization for renters with no pantry, tiny cabinets, and cluttered counters. Renter-friendly storage products and a practical reset approach."
+  h1="Small Apartment Kitchen Organization Ideas for Renters With No Pantry"
+  category="Kitchen Organization"
+  categoryColor="kitchen"
+  readTime="8 min read"
+  {toc}
+  {faqs}
+  {relatedPosts}
+>
+
+  <p>
+    A tiny rental kitchen with no pantry, three small cabinets, and barely enough counter space to open a cutting board — that's the reality for a lot of renters. And the frustrating part is that it can feel messy even right after you clean it, because there's nowhere for things to actually live.
+  </p>
+  <p>
+    Organization in a small rental kitchen isn't about buying more bins. It's about creating clear homes for the things you already have. Here's how to do it without drilling, without spending a fortune, and without turning your kitchen into a storage showroom.
+  </p>
+
+  <p>
+    Before touching a cabinet, decide where your four zones live: <strong>cooking</strong> (stove area), <strong>coffee/breakfast</strong> (mugs, toaster), <strong>food storage</strong> (dry goods, cans, snacks), and <strong>cleaning</strong> (under the sink).
+  </p>
+  <p>
+    Once zones are set, every item has a home and putting things back becomes automatic.
+  </p>
+
+  <blockquote>
+    <strong>Clear your counters first:</strong> Pull everything off. Only bring back what you use daily. Counters are working space, not storage — when they're clear, the whole kitchen feels more manageable before you've touched a single cabinet.
+  </blockquote>
+
+  <h2 id="risers">Cabinet Shelf Risers — Your Highest-Impact Move</h2>
+  <p>
+    This is the highest-impact kitchen organization move you can make. Shelf risers sit inside your existing cabinet and create a second level — immediately doubling storage capacity. A cabinet that held one row of canned goods can now hold two.
+  </p>
+
+  <ProductRecommendationCard
+    number={1}
+    name="Adjustable Cabinet Shelf Riser"
+    bestFor="Doubling vertical space inside any kitchen cabinet"
+    whyItHelps="Creates a second shelf layer using the wasted airspace above your items. Works with plates, bowls, canned goods, mugs, and spices. Available in widths to fit most standard cabinets."
+    renterNote="No installation — sits freely inside the cabinet. Remove at any time."
+    watchOut="Measure cabinet interior height before buying. Some risers are too tall for lower cabinets."
+    category="kitchen"
+  />
+
+  <ProductRecommendationCard
+    number={2}
+    name="Lazy Susan (Turntable)"
+    bestFor="Corner cabinets or deep shelves where things get lost in the back"
+    whyItHelps="A spinning turntable puts everything within reach with one spin. No more pushing items aside to find what's in the back. Works for spices, canned goods, oils, and condiments."
+    renterNote="Free-standing inside the cabinet. No installation."
+    category="kitchen"
+  />
+
+  <h2 id="pantry">Pantry Alternatives for No-Pantry Kitchens</h2>
+  <p>
+    If your apartment has no pantry, you need to create one. The goal is to consolidate all your dry goods — pasta, canned goods, snacks, grains, baking supplies — into one dedicated area that functions as a pantry, even if it isn't one.
+  </p>
+
+  <ProductRecommendationCard
+    number={3}
+    name="Rolling Kitchen Cart with Shelves"
+    bestFor="Adding both counter space and food storage in a small kitchen"
+    whyItHelps="A rolling cart gives you an extra prep surface on top, plus shelves or drawers below for pantry-style food storage. Roll it against the wall when not prepping, or use it as a mobile island."
+    renterNote="Completely mobile, no installation. Takes with you when you move."
+    category="kitchen"
+  />
+
+  <ProductRecommendationCard
+    number={4}
+    name="Stackable Pantry Bins with Labels"
+    bestFor="Organizing dry goods in a cabinet, cart, or open shelf"
+    whyItHelps="Stackable bins with labels create a pantry system inside any space — a cabinet, a cart shelf, or a freestanding unit. Group by category: grains, snacks, canned goods, baking."
+    renterNote="Free-standing inside whatever space you're using. No installation."
+    watchOut="Measure the interior of your storage space before buying — labeled bin sets often come in fixed sizes."
+    category="kitchen"
+  />
+
+  <ProductRecommendationCard
+    number={5}
+    name="Over-Door Pantry Rack"
+    bestFor="Renters who want pantry-style storage on the back of a cabinet or closet door"
+    whyItHelps="Mounts over any standard door and creates a column of shelves for canned goods, spices, snacks, and small bottles — in space that was previously empty."
+    renterNote="Hooks over the door without drilling. Works on cabinet doors or the inside of a pantry closet door if you have one."
+    category="kitchen"
+  />
+
+  <h2 id="drawers">Drawer Dividers for Tiny Kitchens</h2>
+  <p>
+    In a small apartment where you might only have two kitchen drawers, a junk drawer is a real problem. Drawer dividers take five minutes to install and instantly transform a chaotic drawer into one that actually works.
+  </p>
+
+  <ProductRecommendationCard
+    number={6}
+    name="Expandable Bamboo Drawer Dividers"
+    bestFor="Organizing utensils, tools, or miscellaneous items in any drawer"
+    whyItHelps="Adjustable dividers stretch to fit any drawer width and create dedicated zones for different categories of items. Bamboo versions are durable, easy to clean, and look clean."
+    renterNote="Spring-tension mounted — no tools, no adhesive, no damage to the drawer."
+    category="kitchen"
+  />
+
+  <h2 id="spices">Spice Storage for Renters</h2>
+  <p>
+    Spices are uniquely problematic — small, numerous, and constantly getting lost behind each other. A dedicated spice system solves this in one step.
+  </p>
+
+  <ProductRecommendationCard
+    number={7}
+    name="Magnetic Spice Rack (Fridge-Mount)"
+    bestFor="Renters with limited counter and cabinet space"
+    whyItHelps="Magnetic containers stick directly to the side of your refrigerator, turning unused fridge real estate into a visible spice storage area. Keeps the counter clear and the spices easy to grab."
+    renterNote="Magnetic — sticks to any metal surface. No drilling, no adhesive."
+    watchOut="Works only on metal fridge surfaces, not all modern fridge finishes. Test a magnet on your fridge first."
+    category="kitchen"
+  />
+
+  <h2 id="tupperware">Tupperware and Container Organization</h2>
+  <p>
+    The Tupperware cabinet is the kitchen equivalent of a junk drawer — lids everywhere, containers falling out, nothing matching. The fix is ruthless editing followed by one simple vertical system.
+  </p>
+
+  <ProductRecommendationCard
+    number={8}
+    name="Vertical Lid Organizer"
+    bestFor="Storing container lids without stacking chaos"
+    whyItHelps="Stands lids vertically in slots so you can see and grab the right size immediately. Works inside a cabinet or drawer. Pairs well with matching stackable containers stored nearby."
+    renterNote="Free-standing inside the cabinet. No tools needed."
+    category="kitchen"
+  />
+
+  <h2 id="under-sink">Under-Sink Kitchen Organization</h2>
+  <p>
+    The under-sink cabinet typically holds cleaning supplies, trash bags, and whatever got shoved there. The same approach as bathroom under-sink organization applies: pull-out bins, group by category, and work around the pipes.
+  </p>
+
+  <ProductRecommendationCard
+    number={9}
+    name="Under-Sink Pull-Out Organizer (Two-Tier)"
+    bestFor="Maximizing kitchen cabinet space around the sink pipe"
+    whyItHelps="Two tiers of pull-out access mean no more reaching into the back of the cabinet. Groups cleaning supplies, dish soap, and trash bags in categories that are easy to grab."
+    renterNote="Free-standing and adjustable. No installation required."
+    category="kitchen"
+  />
+
+  <h2 id="mistakes">Common Small Kitchen Mistakes to Avoid</h2>
+  <ul>
+    <li><strong>Not defining zones first.</strong> Without zones, things land wherever there's space — which means nowhere has a real home.</li>
+    <li><strong>Skipping the counter reset.</strong> More storage products won't help if the counter is still crowded. Clear it first.</li>
+    <li><strong>Ignoring vertical space in cabinets.</strong> Most cabinets have 6–8 inches of unused air above every item. Shelf risers fix this in minutes.</li>
+    <li><strong>Buying before measuring.</strong> Always measure cabinet interiors and counter space before shopping for any organizer.</li>
+    <li><strong>Keeping more than you use.</strong> If you have 12 mugs and use 3, you're storing 9 mugs you don't need. Edit before you organize.</li>
+  </ul>
+
+</ArticleLayout>

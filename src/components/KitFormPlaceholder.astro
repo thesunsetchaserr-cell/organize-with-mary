@@ -1,0 +1,55 @@
+---
+interface Props {
+  label?: string;
+}
+const { label = 'Send Me the Free Checklist' } = Astro.props;
+---
+
+<!-- KIT FORM EMBED GOES HERE -->
+<!--
+  TO INTEGRATE KIT (formerly ConvertKit):
+  1. Go to Kit → Forms → select your form
+  2. Click "Embed" and copy the HTML snippet
+  3. Replace the block below with Kit's embed code
+  4. Remove the dashed border wrapper
+-->
+
+<div class="kit-wrap">
+  <div class="kit-form-card">
+    <!-- Replace this entire div with your Kit embed -->
+    <form class="kit-form" onsubmit="return false;" aria-label="Email signup form">
+      <div class="form-group">
+        <label class="form-label" for="kit-name">First name</label>
+        <input class="form-input" id="kit-name" type="text" placeholder="Mary" autocomplete="given-name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="kit-email">Email address</label>
+        <input class="form-input" id="kit-email" type="email" placeholder="you@email.com" autocomplete="email" required />
+      </div>
+      <button type="submit" class="btn btn--primary btn--lg btn--full">{label}</button>
+      <p class="trust-note">No spam. Unsubscribe anytime.</p>
+    </form>
+  </div>
+  <p class="kit-placeholder-note">⚙️ Kit form embed placeholder — connect before launch.</p>
+</div>
+
+<style>
+  .kit-wrap { position: relative; }
+
+  .kit-form-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border-light);
+    border-radius: var(--r-xl);
+    padding: var(--s-6) var(--s-6);
+    box-shadow: var(--shadow-md);
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .kit-form { display: flex; flex-direction: column; gap: var(--s-1); }
+  .kit-form .form-group { margin-bottom: var(--s-3); }
+  .kit-form .btn { margin-top: var(--s-2); }
+
+  /* Developer note — hidden from visitors, visible only to admins in page source */
+  .kit-placeholder-note { display: none; }
+</style>

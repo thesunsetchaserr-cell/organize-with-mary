@@ -1,0 +1,374 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import KitFormPlaceholder from '../components/KitFormPlaceholder.astro';
+import FAQ from '../components/FAQ.astro';
+
+const benefits = [
+  'Know exactly what to buy — and skip everything that won\'t actually help',
+  'Organize your kitchen, bathroom, closet, and entryway without guessing',
+  'Stop wasting money on bins and organizers that don\'t fit or solve the problem',
+  'Every product on the list is renter-friendly — no drilling, no damage',
+  'Start with the one room that\'s been bothering you most',
+];
+
+const insideSections = [
+  { icon: '🍳', label: 'Kitchen',              color: 'kitchen',  desc: 'Cabinet risers, drawer dividers, pantry alternatives, spice storage' },
+  { icon: '🪥', label: 'Bathroom',             color: 'bathroom', desc: 'Shower storage, over-toilet towers, under-sink organizers, towel solutions' },
+  { icon: '👗', label: 'Closet',               color: 'closet',   desc: 'Slim hangers, hanging organizers, shoe storage, seasonal items' },
+  { icon: '🚪', label: 'Entryway',             color: 'reset',    desc: 'Drop zone solutions, coat hooks, shoe trays, key and mail organization' },
+  { icon: '🔍', label: 'Hidden Clutter Zones', color: 'neutral',  desc: 'Under the bed, top of the fridge, laundry area, forgotten corners' },
+];
+
+const trustPoints = [
+  { icon: '🏠', label: '100% renter-friendly', desc: 'Every product requires zero drilling and causes zero wall damage.' },
+  { icon: '💰', label: 'Budget-conscious',     desc: 'Affordable options that solve real problems — not expensive aesthetic pieces.' },
+  { icon: '📐', label: 'Designed for small spaces', desc: 'Written specifically for studios, one-bedrooms, and apartments with minimal storage.' },
+  { icon: '✉️', label: 'Delivered instantly',  desc: 'Straight to your inbox. Save it, print it, or use it on your phone while you shop.' },
+];
+
+const faqs = [
+  { question: 'Is the checklist really free?', answer: 'Yes — completely free. No credit card, no catch. You\'ll get it delivered to your email instantly after you sign up.' },
+  { question: 'What format is it in?',         answer: 'A PDF you can print or use digitally on any phone, tablet, or laptop that supports PDFs.' },
+  { question: 'I rent a studio. Will this help me?', answer: 'Yes. The checklist was written specifically with studios, one-bedrooms, and small apartments in mind.' },
+  { question: 'Will I be spammed?',            answer: 'No. You\'ll receive the checklist and occasional emails with organization ideas and product recommendations. Unsubscribe any time with one click.' },
+  { question: 'Do the products require drilling?', answer: 'No. Every product is renter-friendly — no drills, no wall damage, nothing that would void your lease.' },
+];
+---
+
+<BaseLayout
+  title="Free Small Space Storage Shopping Checklist — Organize with Mary"
+  description="Get Mary's free room-by-room checklist of renter-friendly storage products. Organize your small apartment without drilling, damage, or wasting money."
+>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="lm-hero bg-linen">
+    <div class="container lm-hero-wrap">
+      <div class="lm-hero-text">
+        <span class="section-label">Free Download</span>
+        <h1 class="lm-h1">Organize your small apartment without drilling, damage, or wasting money.</h1>
+        <p class="lm-sub text-muted">
+          Get Mary's room-by-room checklist of renter-friendly storage ideas for your kitchen, bathroom, closet, entryway, and hidden clutter zones.
+        </p>
+        <a href="#kit-form" class="btn btn--primary btn--lg lm-hero-cta">
+          Download the Free Checklist
+        </a>
+        <p class="trust-note">No spam. Unsubscribe anytime.</p>
+      </div>
+      <div class="lm-hero-visual">
+        <img
+          src="/images/free-checklist-mockup.webp"
+          alt="Free Small Space Storage Checklist — room-by-room PDF for renters"
+          class="lm-hero-img"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT THIS HELPS YOU DO ═══ -->
+  <section class="benefits-section bg-ivory">
+    <div class="container--content">
+      <h2 class="benefits-hl">What this checklist does for you</h2>
+      <ul class="checklist benefits-list">
+        {benefits.map(b => <li>{b}</li>)}
+      </ul>
+      <a href="#kit-form" class="btn btn--primary mt-6 lm-mid-cta">
+        Get the Free Checklist
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT'S INSIDE ═══ -->
+  <section class="inside-section bg-linen">
+    <div class="container--content">
+      <h2 class="inside-hl">What's inside</h2>
+      <p class="text-muted inside-intro">One checklist. Five rooms. Every product is renter-safe and budget-conscious.</p>
+      <div class="inside-grid">
+        {insideSections.map(s => (
+          <div class={`inside-card card inside-card--${s.color}`}>
+            <span class="inside-icon">{s.icon}</span>
+            <div>
+              <p class="inside-label">{s.label}</p>
+              <p class="inside-desc text-muted">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KIT FORM — EARLY ═══ -->
+  <section id="kit-form" class="form-section bg-cream">
+    <div class="container--narrow text-center">
+      <span class="section-label">Free — No Credit Card</span>
+      <h2 class="form-hl">Get the Free Checklist</h2>
+      <p class="text-muted form-sub">Enter your email and I'll send it straight to your inbox.</p>
+      <KitFormPlaceholder label="Send Me the Free Checklist" />
+    </div>
+  </section>
+
+  <!-- ═══ TRUST POINTS ═══ -->
+  <section class="trust-section bg-ivory">
+    <div class="container--content">
+      <div class="trust-grid">
+        {trustPoints.map(t => (
+          <div class="trust-item">
+            <span class="trust-icon">{t.icon}</span>
+            <p class="trust-label">{t.label}</p>
+            <p class="trust-desc text-muted text-sm">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VISUAL PREVIEWS ═══ -->
+  <section class="preview-section bg-linen">
+    <div class="container--content">
+      <h2 class="text-center preview-hl">Here's what you'll download</h2>
+      <div class="preview-wrap">
+
+        <!-- PDF Cover -->
+        <div class="pdf-cover">
+          <img
+            src="/images/free-checklist-mockup.webp"
+            alt="Free Small Space Storage Checklist — PDF cover"
+            class="pdf-cover-img"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <!-- Room cards column -->
+        <div class="preview-rooms">
+          <p class="preview-rooms-label">Five rooms covered</p>
+          <div class="preview-room-list">
+            {insideSections.map(s => (
+              <div class={`preview-room-item preview-room-item--${s.color}`}>
+                <span class="preview-room-icon">{s.icon}</span>
+                <div>
+                  <p class="preview-room-name">{s.label}</p>
+                  <p class="preview-room-desc text-muted">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KIT FORM — BOTTOM ═══ -->
+  <section class="form-section-bottom bg-cream">
+    <div class="container--narrow text-center">
+      <h2 class="form-bottom-hl">Ready to start organizing?</h2>
+      <p class="text-muted form-bottom-sub">
+        Download the checklist and spend the next hour creating calm in the room that's been bothering you most.
+      </p>
+      <KitFormPlaceholder label="Get the Free Checklist Now" />
+    </div>
+  </section>
+
+  <!-- ═══ RESET KIT UPSELL ═══ -->
+  <section class="upsell-section bg-linen">
+    <div class="container--content upsell-inner">
+      <div class="upsell-vis vis-card vis-card--portrait vis-card--clay" aria-hidden="true">
+        <span class="vis-card__icon">📦</span>
+        <p class="vis-card__title">Mary's Reset Kit</p>
+        <p class="vis-card__sub">$17 · Digital download</p>
+      </div>
+      <div class="upsell-text">
+        <span class="section-label">Want more structure?</span>
+        <h2 class="upsell-hl">Get the full room-by-room reset kit for $17</h2>
+        <p class="text-muted upsell-body">
+          The free checklist tells you what to buy. The Reset Kit gives you the full plan — 10 worksheets, a 7-day reset schedule, a measurement tracker, and a weekly routine to stay organized.
+        </p>
+        <!-- Replace with tracked link after launch: /small-space-reset-kit?utm_source=leadmagnet&utm_medium=web -->
+        <a href="/small-space-reset-kit" class="btn btn--primary btn--lg upsell-btn">
+          See the Reset Kit — $17
+        </a>
+        <p class="trust-note" style="text-align:left">One-time payment · Instant download · No tools needed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <div class="bg-ivory">
+    <FAQ items={faqs} headline="Questions about the checklist" />
+  </div>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .lm-hero { padding-block: var(--s-12) var(--s-10); }
+  .lm-hero .section-label { margin-bottom: var(--s-4); }
+
+  .lm-hero-wrap {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--s-12);
+    align-items: center;
+  }
+  .lm-hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-lg);
+    display: block;
+  }
+
+  .lm-h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: var(--s-4); line-height: 1.16; }
+  .lm-sub { font-size: var(--text-lg); margin-bottom: var(--s-6); max-width: 480px; }
+  .lm-hero-cta { display: block; width: 100%; max-width: 340px; text-align: center; margin-bottom: var(--s-3); }
+
+  /* Benefits */
+  .benefits-section { padding-block: var(--s-10); }
+  .benefits-hl { margin-bottom: var(--s-6); }
+  .benefits-list li { font-size: var(--text-base); margin-bottom: var(--s-3); }
+  .lm-mid-cta { display: block; max-width: 300px; }
+
+  /* Inside */
+  .inside-section { padding-block: var(--s-10); }
+  .inside-hl { margin-bottom: var(--s-3); }
+  .inside-intro { margin-bottom: var(--s-6); }
+  .inside-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--s-4);
+  }
+  .inside-card {
+    display: flex;
+    gap: var(--s-3);
+    align-items: flex-start;
+    padding: var(--s-4) var(--s-5);
+    border-top: 3px solid transparent;
+  }
+  .inside-card--bathroom { border-top-color: var(--c-bathroom); }
+  .inside-card--kitchen  { border-top-color: var(--c-kitchen); }
+  .inside-card--closet   { border-top-color: var(--c-closet); }
+  .inside-card--reset    { border-top-color: var(--c-reset); }
+  .inside-card--neutral  { border-top-color: var(--c-border); }
+  .inside-icon { font-size: 1.6rem; flex-shrink: 0; }
+  .inside-label { font-weight: 700; font-size: var(--text-base); margin-bottom: var(--s-1); }
+  .inside-desc { font-size: var(--text-sm); line-height: 1.5; margin: 0; }
+
+  /* Form sections */
+  .form-section, .form-section-bottom { padding-block: var(--s-12); }
+  .form-hl, .form-bottom-hl { margin-bottom: var(--s-3); }
+  .form-sub, .form-bottom-sub { margin-bottom: var(--s-6); }
+
+  /* Trust */
+  .trust-section { padding-block: var(--s-10); }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--s-6);
+  }
+  .trust-icon { font-size: 1.8rem; display: block; margin-bottom: var(--s-2); }
+  .trust-label { font-weight: 700; font-size: var(--text-base); margin-bottom: var(--s-1); }
+  .trust-desc { margin: 0; }
+
+  /* Preview */
+  .preview-section { padding-block: var(--s-10); }
+  .preview-hl { margin-bottom: var(--s-8); }
+
+  .preview-wrap {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--s-8);
+    align-items: start;
+  }
+
+  /* PDF Cover image */
+  .pdf-cover { }
+  .pdf-cover-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-lg);
+    display: block;
+  }
+
+  /* Room list */
+  .preview-rooms { }
+  .preview-rooms-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c-text-muted);
+    margin-bottom: var(--s-4);
+  }
+  .preview-room-list { display: flex; flex-direction: column; gap: var(--s-3); }
+  .preview-room-item {
+    display: flex;
+    gap: var(--s-3);
+    align-items: flex-start;
+    padding: var(--s-3) var(--s-4);
+    border-radius: var(--r-md);
+    background: var(--c-bg-card);
+    border: 1px solid var(--c-border-light);
+    border-left: 3px solid transparent;
+  }
+  .preview-room-item--kitchen  { border-left-color: var(--c-kitchen); }
+  .preview-room-item--bathroom { border-left-color: var(--c-bathroom); }
+  .preview-room-item--closet   { border-left-color: var(--c-closet); }
+  .preview-room-item--reset    { border-left-color: var(--c-reset); }
+  .preview-room-item--neutral  { border-left-color: var(--c-border); }
+  .preview-room-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .preview-room-name { font-weight: 700; font-size: var(--text-base); margin-bottom: 2px; }
+  .preview-room-desc { font-size: var(--text-sm); margin: 0; line-height: 1.55; }
+
+  /* Upsell */
+  .upsell-section { padding-block: var(--section-py); }
+  .upsell-inner {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: var(--s-10);
+    align-items: center;
+  }
+  .upsell-vis { border-radius: var(--r-xl); min-height: 240px; }
+  .upsell-text .section-label { margin-bottom: var(--s-3); }
+  .upsell-hl { font-size: clamp(1.3rem, 4vw, 1.8rem); margin-bottom: var(--s-4); }
+  .upsell-body { margin-bottom: var(--s-5); }
+  .upsell-btn { margin-bottom: var(--s-3); display: block; max-width: 320px; text-align: center; }
+
+  @media (max-width: 700px) {
+    .upsell-inner { grid-template-columns: 1fr; }
+    .upsell-vis { display: none; }
+    .upsell-btn { max-width: none; width: 100%; }
+  }
+
+  @media (max-width: 860px) {
+    .lm-hero-wrap { grid-template-columns: 1fr; }
+    .lm-hero-visual { display: none; }
+    .lm-hero-cta { max-width: none; }
+  }
+
+  @media (max-width: 680px) {
+    .preview-wrap { grid-template-columns: 1fr; }
+    .pdf-cover { max-width: 320px; margin-inline: auto; }
+  }
+
+  @media (max-width: 560px) {
+    .lm-hero-cta { max-width: none; }
+    .lm-mid-cta { max-width: none; width: 100%; }
+    .trust-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .lm-hero { padding-block: var(--s-8) var(--s-6); }
+    .lm-h1 { font-size: 1.55rem; }
+    .lm-sub { font-size: var(--text-base); }
+    .benefits-section { padding-block: var(--s-8); }
+    .inside-section { padding-block: var(--s-8); }
+    .trust-section { padding-block: var(--s-8); }
+    .preview-section { padding-block: var(--s-8); }
+    .upsell-section { padding-block: var(--s-8); }
+    .inside-desc { font-size: 0.9375rem; }
+    .trust-desc { font-size: 0.9375rem; }
+  }
+</style>

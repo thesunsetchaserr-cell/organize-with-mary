@@ -1,0 +1,183 @@
+---
+import ArticleLayout from '../../components/ArticleLayout.astro';
+import ProductRecommendationCard from '../../components/ProductRecommendationCard.astro';
+
+const toc = [
+  { label: 'No-drill shower storage',                href: '#shower' },
+  { label: 'Under-sink organization',                href: '#under-sink' },
+  { label: 'Over-the-toilet storage',                href: '#over-toilet' },
+  { label: 'Countertop clutter fixes',               href: '#countertop' },
+  { label: 'Towel storage for tiny bathrooms',       href: '#towels' },
+  { label: 'Slim carts and hidden storage',          href: '#carts' },
+  { label: 'Product recommendations',                href: '#products' },
+  { label: 'Common mistakes to avoid',               href: '#mistakes' },
+];
+
+const faqs = [
+  {
+    question: 'Can I use command strips in a rental bathroom?',
+    answer: 'Command strips work on smooth, painted walls but struggle with humidity and tile grout. For lightweight items like small mirrors or hooks, they\'re usually fine. For anything heavier, use tension-mounted, over-door, or freestanding options instead.',
+  },
+  {
+    question: 'What\'s the best over-the-toilet storage for a small bathroom?',
+    answer: 'A freestanding over-the-toilet etagere is the most reliable option — no drilling, fits around most standard toilets, and holds a surprising amount. Look for a version with a closed cabinet section at the bottom to hide visual clutter.',
+  },
+  {
+    question: 'How do I organize under the sink when pipes are in the way?',
+    answer: 'U-shaped under-sink organizers are designed specifically for this problem. They sit around the pipe and give you a full shelf on either side. Pair with small pull-out bins for maximum access.',
+  },
+  {
+    question: 'What\'s the easiest first step to organizing a small bathroom?',
+    answer: 'Pull everything out, toss anything expired or unused, and group what\'s left by category — hair, skincare, medicine, cleaning. You\'ll usually find you have less than you thought, and the real storage needs become obvious.',
+  },
+];
+
+const relatedPosts = [
+  { title: 'Small Apartment Kitchen Organization Ideas for Renters With No Pantry', href: '/blog/small-apartment-kitchen-organization', category: 'kitchen' as const },
+  { title: 'How to Organize a Tiny Closet Without Custom Shelving',                href: '/blog/tiny-closet-organization',             category: 'closet' as const },
+];
+---
+
+<ArticleLayout
+  title="17 Renter-Friendly Bathroom Storage Ideas That Don't Damage Walls"
+  description="Small bathroom storage ideas for renters — no-drill shelves, under-sink organizers, over-the-toilet storage, towel storage, and renter-safe products that won't cost you your deposit."
+  h1="17 Renter-Friendly Bathroom Storage Ideas That Don't Damage Walls"
+  category="Bathroom Storage"
+  categoryColor="bathroom"
+  readTime="7 min read"
+  {toc}
+  {faqs}
+  {relatedPosts}
+>
+
+  <p>
+    If your bathroom counter has become the home for skincare, hair tools, towels, and random backup products, the problem probably isn't that you're messy. It's that the space was never designed with enough storage.
+  </p>
+  <p>
+    Small rental bathrooms often have one tiny vanity, one cabinet under the sink, and no linen closet. You can dramatically change how your bathroom feels without drilling a single hole or spending more than you need to.
+  </p>
+
+  <blockquote>
+    <strong>Measure before you buy:</strong> Write down your under-sink height, the space beside your toilet, shower floor-to-ceiling height, and counter width. Five minutes of measuring prevents multiple trips back to the store.
+  </blockquote>
+
+  <h2 id="shower">No-Drill Shower Storage</h2>
+  <p>
+    Your shower is probably the most chaotic storage zone in a small rental bathroom — bottles lined up on the tub ledge, things falling over, nowhere stable to put a razor. These solutions fix that without touching the walls.
+  </p>
+
+  <ProductRecommendationCard
+    number={1}
+    name="Tension-Pole Shower Caddy"
+    bestFor="Renters with a tub/shower combo who need multiple shelves"
+    whyItHelps="Uses floor-to-ceiling tension to hold 2–3 shelves of products vertically. No drilling, no suction, no wall contact. Holds shampoo, conditioner, razors, and loofahs on separate tiers."
+    renterNote="No drilling or adhesive. Installs and removes in minutes with zero wall damage."
+    watchOut="Measure your floor-to-ceiling height before buying — some models have a maximum height. Also make sure the tension pole is tight enough that it won't slip."
+    category="bathroom"
+  />
+
+  <ProductRecommendationCard
+    number={2}
+    name="Over-the-Showerhead Caddy"
+    bestFor="Walk-in showers or anyone who wants a simpler one-shelf solution"
+    whyItHelps="Hooks directly over the showerhead arm — no tension pole, no wall contact. Great for a small collection of daily-use products."
+    renterNote="Nothing touches the walls. Works on any standard showerhead."
+    watchOut="Weight capacity is limited — keep it to 3–4 bottles max."
+    category="bathroom"
+  />
+
+  <h2 id="under-sink">Under-Sink Organization</h2>
+  <p>
+    The cabinet under the bathroom sink is usually a black hole. Pipes run through the middle, bottles fall over in the back, and you can never find what you're looking for.
+  </p>
+  <p>
+    The fix is to stop treating it like one big shelf and start treating it as a series of small zones — one for daily use, one for backup supplies, one for cleaning.
+  </p>
+
+  <ProductRecommendationCard
+    number={3}
+    name="U-Shaped Under-Sink Organizer"
+    bestFor="Maximizing the space around the sink pipe"
+    whyItHelps="Designed specifically for under-sink use — the cutout wraps around the pipe and gives you a full shelf surface on either side. Doubles usable space without any installation."
+    renterNote="No tools, no screws. Set it in place and start filling it."
+    watchOut="Measure the pipe height from the cabinet floor before buying — some organizers sit too low."
+    category="bathroom"
+  />
+
+  <ProductRecommendationCard
+    number={4}
+    name="Stackable Pull-Out Drawer Bins"
+    bestFor="Grouping small items like hair ties, medicines, and travel-size products"
+    whyItHelps="Pull-out drawers mean you don't have to reach into the dark back corner. Stack two tiers to triple usable space even with the pipe in the way."
+    renterNote="Free-standing. No tools, no screws."
+    category="bathroom"
+  />
+
+  <h2 id="over-toilet">Over-the-Toilet Storage</h2>
+  <p>
+    The space above the toilet is some of the most underused real estate in a small bathroom. A freestanding over-the-toilet unit can add the equivalent of a small linen closet — without touching the wall.
+  </p>
+
+  <ProductRecommendationCard
+    number={5}
+    name="Freestanding Over-the-Toilet Etagere"
+    bestFor="Anyone with a standard toilet who needs additional shelving"
+    whyItHelps="Stands independently with feet that straddle the toilet base. Adds 2–3 shelves of storage above the tank in a footprint that was previously empty. Holds towels, toiletries, and décor."
+    renterNote="Completely freestanding. No mounting, no drilling. Fits most standard toilets."
+    watchOut="Measure the width of your toilet tank before buying — some etageres are too narrow or too wide."
+    category="bathroom"
+  />
+
+  <h2 id="countertop">Countertop Clutter Fixes</h2>
+  <p>
+    If your counter is 10–12 inches wide and you're trying to fit a toothbrush holder, soap dispenser, full skincare routine, and hair tools — something has to go vertical.
+  </p>
+
+  <ProductRecommendationCard
+    number={6}
+    name="Acrylic Countertop Organizer (Tiered)"
+    bestFor="Skincare and daily-use products on a small counter"
+    whyItHelps="A clear acrylic organizer puts everything at eye level, prevents items from tumbling, and creates a system for daily-use products without crowding the surface. The clear material keeps it from visually overwhelming a small space."
+    renterNote="No installation. Sits on the counter and lifts off cleanly."
+    category="bathroom"
+  />
+
+  <h2 id="towels">Towel Storage for Tiny Bathrooms</h2>
+  <p>
+    Most rental bathrooms have one towel bar — if that. Here's how to add meaningful towel storage without touching a wall.
+  </p>
+
+  <ProductRecommendationCard
+    number={7}
+    name="Over-the-Door Towel Rack"
+    bestFor="Hanging bath towels on the bathroom door"
+    whyItHelps="Uses the full height of your door to hang multiple towels. Most fit doors up to 1.5 inches thick and hold 4–6 towels. Also great for robes and extra hand towels."
+    renterNote="Hooks over the top of a standard door. No screws, no adhesive. Remove when you move."
+    category="bathroom"
+  />
+
+  <h2 id="carts">Slim Rolling Carts and Hidden Storage</h2>
+  <p>
+    The narrow gap between the toilet and wall, or between the vanity and door, is often exactly the right width for a slim rolling cart. Most renters walk past this space every day without realizing it's usable storage.
+  </p>
+
+  <ProductRecommendationCard
+    number={8}
+    name="Slim Rolling Storage Cart (5–7 inches wide)"
+    bestFor="The narrow gap beside the toilet, vanity, or under a pedestal sink"
+    whyItHelps="A cart that's 5–7 inches wide slides into most bathroom gaps and gives you drawers for toilet paper, hair tools, cleaning wipes, and small bottles. Wheels make it easy to pull out for access."
+    renterNote="Free-standing and mobile. Roll it with you when you move."
+    watchOut="Measure the gap width carefully — some carts are labeled as 'slim' but are still 8–9 inches wide."
+    category="bathroom"
+  />
+
+  <h2 id="mistakes">Common Mistakes Renters Make with Bathroom Storage</h2>
+  <ul>
+    <li><strong>Buying without measuring.</strong> Always measure the four key areas before you shop. Every time.</li>
+    <li><strong>Adding more organizers to a crowded counter.</strong> More organizers don't help if the counter is already full — go vertical instead.</li>
+    <li><strong>Ignoring the bathroom door.</strong> The back of your door might be the best storage wall you have.</li>
+    <li><strong>Not decluttering first.</strong> Organization can't fix too much stuff. Pull everything out and edit before you buy anything new.</li>
+    <li><strong>Using suction on textured tile.</strong> Suction cups don't work on textured surfaces — use tension, over-door, or freestanding options instead.</li>
+  </ul>
+
+</ArticleLayout>

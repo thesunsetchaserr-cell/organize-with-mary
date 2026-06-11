@@ -1,0 +1,318 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StripeCheckoutPlaceholder from '../components/StripeCheckoutPlaceholder.astro';
+import FAQ from '../components/FAQ.astro';
+
+const included = [
+  { icon: '📅', name: '7-Day Small Space Reset Plan',    desc: 'A day-by-day plan that walks you through your whole apartment in one week.' },
+  { icon: '🍳', name: 'Small Kitchen Reset Checklist',   desc: 'Step-by-step reset for a calmer, more functional small kitchen.' },
+  { icon: '🪥', name: 'Bathroom Storage Planner',        desc: 'Map out exactly what storage you need for your specific bathroom.' },
+  { icon: '👗', name: 'Tiny Closet Reset Worksheet',     desc: 'Edit, categorize, and organize your closet in one focused session.' },
+  { icon: '🚪', name: 'Entryway Drop Zone Planner',      desc: 'Create a landing system so your entryway stops collecting clutter.' },
+  { icon: '🪣', name: 'Under-Sink Organization Sheet',   desc: 'Map out what goes under each sink — kitchen and bathroom.' },
+  { icon: '🏠', name: 'Renter-Safe Shopping List',       desc: 'Every product recommended in the kit, with renter-friendly notes.' },
+  { icon: '📏', name: 'Measurement Tracker',             desc: 'Write down key measurements before you shop — avoid buying the wrong size.' },
+  { icon: '✅', name: 'Weekly Reset Checklist',          desc: 'A simple 20-minute weekly routine to maintain what you\'ve organized.' },
+  { icon: '📦', name: 'Amazon Finds Tracker',            desc: 'A blank tracker to add your own product links and notes as you shop.' },
+];
+
+const forYou = [
+  'You rent and can\'t drill or make permanent changes.',
+  'Your bathroom, kitchen, or closet always feels cluttered.',
+  'You want a calmer home without buying expensive custom systems.',
+  'You need a simple plan, not another overwhelming organizing project.',
+  'You want to know what to measure and what to buy before spending money.',
+];
+
+const whyItWorks = [
+  { icon: '🎯', title: 'One room at a time',        body: 'Each worksheet covers one specific space so you\'re not overwhelmed by the whole apartment.' },
+  { icon: '📐', title: 'Measure before you buy',    body: 'The measurement tracker and shopping list mean you only buy what will actually fit and work.' },
+  { icon: '🔄', title: 'Built to stay organized',   body: 'The weekly reset routine takes 20 minutes and keeps your systems from sliding back into chaos.' },
+  { icon: '🏠', title: 'Renter-first approach',     body: 'Every recommendation is no-drill, no-damage, and safe for any lease — no custom shelving required.' },
+];
+
+const faqs = [
+  { question: 'Is this a physical product?',        answer: 'No — this is a digital product delivered to your email after purchase. You\'ll receive a PDF download link immediately. No shipping, no waiting.' },
+  { question: 'Can I use it if I rent?',            answer: 'Yes. The entire kit is designed for renters — every recommendation is no-drill and lease-friendly.' },
+  { question: 'Do I need tools or supplies?',       answer: 'No tools required. You\'ll need a tape measure for the measurement tracker and a printer if you want to print the pages — though they work just as well digitally.' },
+  { question: 'Is this beginner-friendly?',         answer: 'Yes. The kit was designed for people who feel overwhelmed by organizing, not for people who already have it figured out. Every worksheet is clear and simple.' },
+  { question: 'How do I get the files?',            answer: 'After purchase, you\'ll receive an email with a download link. You\'ll also be able to download directly from the confirmation page.' },
+  { question: 'Can I print it?',                    answer: 'Absolutely. The worksheets are designed to be printed on standard letter-size paper, but they also work great on any tablet or screen.' },
+];
+---
+
+<BaseLayout
+  title="Mary's Small Space Reset Kit — $17 Renter-Friendly Organization System"
+  description="A practical $17 digital kit with checklists, planners, and reset routines for renters and small apartment dwellers. Organize your kitchen, bathroom, closet, and entryway."
+>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="kit-hero bg-linen">
+    <div class="container kit-hero-wrap">
+      <div class="kit-hero-text">
+        <span class="section-label">Digital Product — $17</span>
+        <h1 class="kit-h1">Reset your small rental with renter-friendly systems you can actually follow.</h1>
+        <p class="kit-sub text-muted">
+          A practical $17 digital kit with checklists, planners, shopping lists, and simple reset routines to help you organize your kitchen, bathroom, closet, entryway, and weekly home routine.
+        </p>
+
+        <!-- EARLY CTA — appears before details -->
+        <div class="kit-early-cta">
+          <a href="#checkout" class="btn btn--primary btn--lg kit-buy-btn">
+            Get Instant Access — $17
+          </a>
+          <p class="kit-cta-note text-sm text-muted">Digital download · Works for renters · No custom shelving needed</p>
+        </div>
+      </div>
+      <div class="kit-hero-vis">
+        <img
+          src="/images/reset-kit-hero-mockup.webp"
+          alt="Mary's Small Space Reset Kit — digital PDF download"
+          class="kit-hero-img"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BRIDGE CTA — quick buy before content ═══ -->
+  <div class="bridge-cta bg-clay-light">
+    <div class="container--narrow bridge-inner">
+      <p class="bridge-text">Ready to reset your space?</p>
+      <a href="#checkout" class="btn btn--primary bridge-btn">
+        Get Instant Access — $17
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══ WHAT'S INCLUDED ═══ -->
+  <section class="included-section bg-ivory">
+    <div class="container">
+      <div class="included-header text-center">
+        <h2>What's included</h2>
+        <p class="text-muted">10 worksheets and planners covering every room and routine in your small apartment.</p>
+      </div>
+      <ul class="included-grid">
+        {included.map(item => (
+          <li class="included-item card">
+            <span class="included-icon">{item.icon}</span>
+            <div>
+              <p class="included-name">{item.name}</p>
+              <p class="included-desc text-muted text-sm">{item.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══ WHO IT'S FOR ═══ -->
+  <section class="for-section bg-linen">
+    <div class="container--content">
+      <h2>This kit is for you if…</h2>
+      <ul class="checklist for-list">
+        {forYou.map(p => <li>{p}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══ WHY IT WORKS ═══ -->
+  <section class="why-section bg-ivory">
+    <div class="container--content">
+      <h2>Why it works</h2>
+      <p class="text-muted why-intro">
+        Most organization advice gives you inspiration — a product list and a vague idea. What it doesn't give you is a process. Without a process, you buy the products, arrange things for a few days, and then everything goes back to the way it was.
+      </p>
+      <div class="why-grid">
+        {whyItWorks.map(w => (
+          <div class="why-card card">
+            <span class="why-icon">{w.icon}</span>
+            <p class="why-title">{w.title}</p>
+            <p class="why-body text-muted text-sm">{w.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRODUCT PREVIEW ═══ -->
+  <section class="preview-section bg-linen">
+    <div class="container">
+      <h2 class="text-center preview-hl">A look inside the kit</h2>
+      <p class="text-center text-muted preview-sub">10 printable worksheets delivered instantly as a PDF.</p>
+      <div class="preview-bundle">
+        <img
+          src="/images/reset-kit-bundle-mockup.webp"
+          alt="Mary's Small Space Reset Kit — all 10 worksheets spread out"
+          class="preview-bundle-img"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHECKOUT ═══ -->
+  <section id="checkout" class="checkout-section bg-cream">
+    <div class="container--narrow text-center">
+      <span class="section-label">One-Time Payment · Instant Download</span>
+      <h2 class="checkout-hl">Get Mary's Small Space Reset Kit</h2>
+      <p class="text-muted checkout-sub">Everything you need to reset your rental apartment — room by room.</p>
+      <StripeCheckoutPlaceholder price="$17" productName="Mary's Small Space Reset Kit" />
+      <p class="checkout-reassurance text-sm text-muted">
+        This is a digital product. You'll receive access after purchase. Print the pages or use them digitally.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <div class="bg-ivory">
+    <FAQ items={faqs} headline="Questions about the Reset Kit" />
+  </div>
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="final-cta bg-linen">
+    <div class="container--narrow text-center">
+      <h2>Ready to reset your space?</h2>
+      <p class="text-muted final-cta-sub">
+        Start with the room that's been bothering you most. The kit walks you through the rest.
+      </p>
+      <a href="#checkout" class="btn btn--primary btn--lg final-cta-btn">
+        Get Instant Access — $17
+      </a>
+      <p class="trust-note">Digital download · Designed for renters · No tools needed</p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .kit-hero { padding-block: var(--s-10); }
+  .kit-hero-wrap {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: var(--s-10);
+    align-items: center;
+  }
+  .kit-hero-text .section-label { margin-bottom: var(--s-4); }
+  .kit-h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: var(--s-4); line-height: 1.16; }
+  .kit-sub { font-size: var(--text-lg); margin-bottom: var(--s-6); }
+  .kit-early-cta { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-3); }
+  .kit-buy-btn { width: 100%; max-width: 340px; text-align: center; }
+  .kit-cta-note { margin: 0; }
+  .kit-hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-lg);
+    display: block;
+  }
+
+  /* Bridge CTA */
+  .bridge-cta { padding-block: var(--s-5); border-bottom: 1px solid var(--c-border); }
+  .bridge-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-5);
+    flex-wrap: wrap;
+  }
+  .bridge-text {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--c-clay-dark);
+    margin: 0;
+  }
+  .bridge-btn { white-space: nowrap; }
+
+  @media (max-width: 500px) {
+    .bridge-inner { flex-direction: column; align-items: stretch; text-align: center; }
+    .bridge-btn { width: 100%; }
+  }
+
+  /* Included */
+  .included-section { padding-block: var(--section-py); }
+  .included-header { margin-bottom: var(--s-8); }
+  .included-header h2 { margin-bottom: var(--s-3); }
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--s-4);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .included-item { display: flex; gap: var(--s-4); align-items: flex-start; padding: var(--s-4) var(--s-5); }
+  .included-icon { font-size: 1.6rem; flex-shrink: 0; }
+  .included-name { font-weight: 700; margin-bottom: var(--s-1); font-size: var(--text-base); }
+  .included-desc { margin: 0; }
+
+  /* For */
+  .for-section { padding-block: var(--section-py); }
+  .for-section h2 { margin-bottom: var(--s-5); }
+  .for-list li { font-size: var(--text-base); margin-bottom: var(--s-3); }
+
+  /* Why */
+  .why-section { padding-block: var(--section-py); }
+  .why-section h2 { margin-bottom: var(--s-4); }
+  .why-intro { margin-bottom: var(--s-8); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--s-4);
+  }
+  .why-card { padding: var(--s-5); }
+  .why-icon { font-size: 1.8rem; display: block; margin-bottom: var(--s-3); }
+  .why-title { font-weight: 700; font-size: var(--text-base); margin-bottom: var(--s-2); }
+  .why-body { margin: 0; }
+
+  /* Preview */
+  .preview-section { padding-block: var(--section-py); }
+  .preview-hl { margin-bottom: var(--s-2); }
+  .preview-sub { margin-bottom: var(--s-8); font-size: var(--text-base); }
+  .preview-bundle { max-width: 800px; margin-inline: auto; }
+  .preview-bundle-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-lg);
+    display: block;
+  }
+
+  /* Checkout */
+  .checkout-section { padding-block: var(--section-py); }
+  .checkout-hl { margin-bottom: var(--s-3); }
+  .checkout-sub { margin-bottom: var(--s-8); }
+  .checkout-reassurance { margin-top: var(--s-5); max-width: 360px; margin-inline: auto; }
+
+  /* Final CTA */
+  .final-cta { padding-block: var(--s-12); }
+  .final-cta h2 { margin-bottom: var(--s-3); }
+  .final-cta-sub { margin-bottom: var(--s-6); }
+  .final-cta-btn { display: block; width: 100%; max-width: 340px; margin-inline: auto; margin-bottom: var(--s-3); }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    .kit-hero-wrap { grid-template-columns: 1fr; }
+    .kit-hero-vis { display: none; }
+    .kit-buy-btn { max-width: none; width: 100%; }
+  }
+  @media (max-width: 600px) {
+    .kit-early-cta { align-items: stretch; }
+  }
+  @media (max-width: 480px) {
+    .kit-hero { padding-block: var(--s-8); }
+    .kit-h1 { font-size: 1.6rem; }
+    .kit-sub { font-size: var(--text-base); }
+    .included-section { padding-block: var(--s-8); }
+    .included-desc { font-size: 0.9375rem; }
+    .why-body { font-size: 0.9375rem; }
+    .for-section { padding-block: var(--s-8); }
+    .why-section { padding-block: var(--s-8); }
+    .checkout-section { padding-block: var(--s-8); }
+    .final-cta { padding-block: var(--s-8); }
+    .final-cta-btn { max-width: none; }
+  }
+</style>

@@ -1,0 +1,138 @@
+---
+import ArticleLayout from '../../components/ArticleLayout.astro';
+import ProductRecommendationCard from '../../components/ProductRecommendationCard.astro';
+
+const toc = [
+  { label: 'Create a dedicated pantry zone',  href: '#zone' },
+  { label: 'Rolling cart as pantry',          href: '#cart' },
+  { label: 'Cabinet-door pantry storage',     href: '#door' },
+  { label: 'Stackable bins for dry goods',    href: '#bins' },
+  { label: 'Common no-pantry mistakes',       href: '#mistakes' },
+];
+
+const faqs = [
+  {
+    question: 'What\'s the easiest way to create pantry storage in an apartment?',
+    answer: 'Pick one specific area and commit to it as your pantry zone — a cabinet, a rolling cart, or a corner shelf. The most important thing is that all your dry goods and canned goods live together in one dedicated spot. Spreading food storage across four different cabinets makes everything harder to find and manage.',
+  },
+  {
+    question: 'Is a rolling kitchen cart worth it in a small apartment?',
+    answer: 'For most renters, yes. A cart with shelves adds both extra counter space on top and pantry-style food storage below. It moves, so you can tuck it against a wall when not in use. It\'s one of the best value purchases for a small rental kitchen with no pantry.',
+  },
+  {
+    question: 'Can I use a bookshelf as a pantry?',
+    answer: 'Absolutely. A freestanding bookcase in a corner or along a wall works well as a pantry substitute. Use bins on lower shelves for dry goods, baskets for snacks, and the upper shelves for items you use less often. Add a curtain if you want to close it off.',
+  },
+  {
+    question: 'How do I keep dry goods organized without a pantry?',
+    answer: 'Decant bulk dry goods into clear, airtight containers with labels. When everything is visible and labeled, you stop buying duplicates, you use older items first, and the system stays organized much longer than bins of open bags and boxes.',
+  },
+];
+
+const relatedPosts = [
+  { title: 'Small Apartment Kitchen Organization Ideas for Renters With No Pantry', href: '/blog/small-apartment-kitchen-organization', category: 'kitchen' as const },
+  { title: 'Under-Sink Organization Ideas for Small Apartments',                    href: '/blog/under-sink-organization-small-apartments', category: 'bathroom' as const },
+];
+---
+
+<ArticleLayout
+  title="No Pantry? Small Kitchen Organization Ideas That Actually Work — Organize with Mary"
+  description="Small kitchen with no pantry? These renter-friendly organization ideas create real pantry storage using rolling carts, cabinet-door racks, and stackable bins — no drilling required."
+  h1="No Pantry? Small Kitchen Organization Ideas That Actually Work"
+  category="Kitchen Organization"
+  categoryColor="kitchen"
+  readTime="6 min read"
+  {toc}
+  {faqs}
+  {relatedPosts}
+>
+
+  <p>
+    Not having a pantry is one of the most common complaints in small rental kitchens. Three small cabinets, a fridge, a stove — and somewhere in there, all your food is supposed to live.
+  </p>
+  <p>
+    The fix isn't finding more cabinet space. It's creating a dedicated pantry zone outside of the cabinets, so your dry goods have a real home and your cabinets can focus on what they're actually sized for.
+  </p>
+
+  <blockquote>
+    <strong>Start by decanting:</strong> Move dry goods into clear, airtight containers. Open bags of pasta, half-empty boxes of cereal, and random canned goods are hard to manage anywhere. Uniform containers take up less space and stack better — whether in a cart, a cabinet, or on a shelf.
+  </blockquote>
+
+  <h2 id="zone">Create a Dedicated Pantry Zone</h2>
+  <p>
+    The most important move for a no-pantry kitchen isn't buying a specific product — it's deciding where your pantry zone will be.
+  </p>
+  <p>
+    A rolling cart next to the fridge, a small shelving unit in a corner, or a dedicated cabinet all work. What doesn't work is spreading food across multiple cabinets with no clear home.
+  </p>
+  <p>
+    Once everything food-related lives in one zone, your kitchen becomes dramatically easier to use. You know where to look. You know when you're running low. And your other cabinets stop becoming overflow storage.
+  </p>
+
+  <h2 id="cart">Rolling Cart as a Pantry</h2>
+  <p>
+    A rolling kitchen cart is the most versatile pantry substitute for small apartments. It gives you extra counter space on top, pantry-style shelves below, and the flexibility to move it when you need more floor space.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={1}
+    name="Rolling Kitchen Cart with Shelves (Butcher Block or Wire)"
+    bestFor="Adding pantry storage and counter space in one piece"
+    whyItHelps="The top surface works as a prep area or appliance platform. The shelves below hold dry goods, bins, and small appliances. Roll it flush against a wall when not in use."
+    renterNote="Completely mobile. Takes with you when you move."
+    watchOut="Measure the gap where you plan to park it before buying — some carts are wider than expected."
+    category="kitchen"
+  />
+
+  <h2 id="door">Cabinet-Door Pantry Storage</h2>
+  <p>
+    The inside of your cabinet doors is free storage space you're probably not using. An over-door pantry rack turns the back of a cabinet door into a full column of shelves for spices, canned goods, and small bottles.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={2}
+    name="Over-Door Cabinet Pantry Rack"
+    bestFor="Spices, condiments, canned goods, and small pantry items"
+    whyItHelps="Mounts over any standard cabinet door and creates vertical shelf space in a spot that was previously empty. Most hold 15–25 lbs spread across several shelves."
+    renterNote="Hooks over the door with no screws needed. Works on standard cabinet door frames."
+    watchOut="Check that your cabinet door clears the shelves when it closes — some deeper racks require slightly wider clearance."
+    category="kitchen"
+  />
+
+  <h2 id="bins">Stackable Bins for Dry Goods</h2>
+  <p>
+    Whether you're using a cart, a shelf, or a cabinet as your pantry zone, the right bins are what make it stay organized. Clear, stackable bins with labels create a visible system that's actually easy to maintain.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={3}
+    name="Clear Stackable Pantry Bins with Labels"
+    bestFor="Dry goods, snacks, grains, canned goods — any pantry-style storage"
+    whyItHelps="Stackable bins use vertical space efficiently, clear sides mean you can see what's inside without pulling everything out, and labels keep the system running without thinking."
+    renterNote="Free-standing in whatever storage you're using. No installation needed."
+    watchOut="Measure the interior of your cart or shelf before buying — bin sets often come in fixed sizes."
+    category="kitchen"
+  />
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={4}
+    name="Lazy Susan (Turntable) for Cabinet or Counter"
+    bestFor="Deep cabinets or corners where things get pushed to the back"
+    whyItHelps="A spinning turntable brings everything to the front with one spin. Works for spices, oils, canned goods, and condiments. Prevents the problem of forgotten items pushed behind other things."
+    renterNote="Free-standing inside any cabinet or on a counter. No installation."
+    category="kitchen"
+  />
+
+  <h2 id="mistakes">Common No-Pantry Kitchen Mistakes</h2>
+  <ul>
+    <li><strong>Spreading food across every cabinet.</strong> When dry goods don't have one dedicated zone, the kitchen always feels chaotic and you buy duplicates constantly.</li>
+    <li><strong>Skipping the decanting step.</strong> Open bags and half-empty boxes make any system collapse. Clear uniform containers are worth the one-time effort.</li>
+    <li><strong>Overestimating how much cart space you have.</strong> Measure the gap before ordering a rolling cart — many are wider than they look in photos.</li>
+    <li><strong>Storing appliances in pantry space.</strong> A rolling cart isn't a pantry if the toaster and air fryer are on the shelves. Give appliances their own spot.</li>
+  </ul>
+
+</ArticleLayout>

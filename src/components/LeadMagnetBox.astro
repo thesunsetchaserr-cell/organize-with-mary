@@ -1,0 +1,93 @@
+---
+interface Props {
+  variant?: 'inline' | 'full';
+  headline?: string;
+  body?: string;
+}
+const {
+  variant = 'inline',
+  headline = 'Free Small Space Storage Checklist',
+  body = 'A room-by-room checklist of renter-friendly storage products. Organize your kitchen, bathroom, closet, and entryway without drilling a single hole.',
+} = Astro.props;
+---
+
+<div class={`lead-magnet-box lead-magnet-box--${variant}`}>
+  <div class="lm-content">
+    <p class="badge badge--sage lm-badge">Free Download</p>
+    <h3 class="lm-headline">{headline}</h3>
+    <p class="lm-body">{body}</p>
+    <a href="/free-small-space-storage-checklist" class="btn btn--primary btn--lg lm-cta">
+      Get the Free Checklist
+    </a>
+    <p class="lm-trust">No spam. Unsubscribe anytime.</p>
+  </div>
+  <div class="lm-image">
+    <div class="img-placeholder img-placeholder--portrait lm-img-inner">
+      📋 Checklist Preview<br>Image Placeholder
+    </div>
+  </div>
+</div>
+
+<style>
+  .lead-magnet-box {
+    background: var(--c-bg-warm);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    display: grid;
+    gap: 0;
+  }
+
+  .lead-magnet-box--inline {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .lead-magnet-box--full {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .lm-content {
+    padding: var(--s-8);
+  }
+
+  .lm-badge { margin-bottom: var(--s-3); }
+
+  .lm-headline {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    margin-bottom: var(--s-3);
+  }
+
+  .lm-body {
+    color: var(--c-text-muted);
+    margin-bottom: var(--s-5);
+    font-size: var(--text-base);
+  }
+
+  .lm-cta { margin-bottom: var(--s-3); }
+
+  .lm-trust {
+    font-size: var(--text-xs);
+    color: var(--c-text-light);
+    margin: 0;
+  }
+
+  .lm-image {
+    overflow: hidden;
+  }
+
+  .lm-img-inner {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+  }
+
+  @media (max-width: 640px) {
+    .lead-magnet-box--inline,
+    .lead-magnet-box--full {
+      grid-template-columns: 1fr;
+    }
+    .lm-image { display: none; }
+  }
+</style>

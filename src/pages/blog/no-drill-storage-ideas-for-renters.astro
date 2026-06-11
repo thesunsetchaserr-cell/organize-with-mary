@@ -1,0 +1,144 @@
+---
+import ArticleLayout from '../../components/ArticleLayout.astro';
+import ProductRecommendationCard from '../../components/ProductRecommendationCard.astro';
+
+const toc = [
+  { label: 'Over-door organizers',           href: '#over-door' },
+  { label: 'Tension-mounted systems',        href: '#tension' },
+  { label: 'Freestanding storage',           href: '#freestanding' },
+  { label: 'Adhesive hooks and strips',      href: '#adhesive' },
+  { label: 'Common no-drill mistakes',       href: '#mistakes' },
+];
+
+const faqs = [
+  {
+    question: 'What counts as a no-drill storage solution?',
+    answer: 'Anything that doesn\'t require screws, nails, or anchors going into a wall or ceiling. That includes over-door systems, tension-mounted caddies, freestanding shelves, adhesive hooks, and furniture with built-in storage. Most of these hold significant weight and come out without a trace.',
+  },
+  {
+    question: 'Can I use Command strips in a rental?',
+    answer: 'Yes — with conditions. Command strips work well on smooth, painted walls. They don\'t work reliably on textured walls, unprimed drywall, or wallpaper. Always follow the weight limits, press firmly for 30 seconds, and leave them to bond for 1 hour before loading with weight.',
+  },
+  {
+    question: 'What\'s the most storage you can add without drilling?',
+    answer: 'Quite a lot. An over-door organizer, a tension pole in the shower, a freestanding etagere above the toilet, a rolling cart in the kitchen, and an over-door rack in the closet can collectively add 20–30 cubic feet of storage — all renter-safe.',
+  },
+  {
+    question: 'Do over-door organizers damage doors?',
+    answer: 'If sized correctly, no. Over-door hooks rest on the door frame and don\'t touch the door itself. The key is buying one with padded hooks and making sure it clears your door frame. Measure frame thickness before buying.',
+  },
+];
+
+const relatedPosts = [
+  { title: '17 Renter-Friendly Bathroom Storage Ideas That Don\'t Damage Walls', href: '/blog/renter-friendly-bathroom-storage', category: 'bathroom' as const },
+  { title: 'How to Organize a Tiny Closet Without Custom Shelving',              href: '/blog/tiny-closet-organization',          category: 'closet' as const },
+];
+---
+
+<ArticleLayout
+  title="Best No-Drill Storage Ideas for Renters — Organize with Mary"
+  description="No-drill storage ideas for renters: over-door organizers, tension caddies, freestanding shelves, and adhesive hooks. Add real storage to any rental without damaging walls."
+  h1="Best No-Drill Storage Ideas for Renters"
+  category="No-Drill Storage"
+  categoryColor="reset"
+  readTime="5 min read"
+  {toc}
+  {faqs}
+  {relatedPosts}
+>
+
+  <p>
+    If your lease says no holes, no screws, no permanent changes — you still have real options. Renter-friendly storage isn't about making do with less. It's about knowing which systems hold weight, stay put, and come out cleanly when you move.
+  </p>
+  <p>
+    Most of the best no-drill solutions cost between $15 and $40. You don't need to buy everything at once — start with the space that bothers you most.
+  </p>
+
+  <blockquote>
+    <strong>Measure before you buy:</strong> Over-door organizers come in different hook depths and won't always clear thick door frames. Tension caddies have height maximums. A two-minute measuring session prevents multiple returns.
+  </blockquote>
+
+  <h2 id="over-door">Over-Door Organizers</h2>
+  <p>
+    The back of a door is one of the most underused surfaces in a rental. Over-door hooks, racks, and pocket organizers add storage in places where nothing was before — without touching the wall once.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={1}
+    name="Over-the-Door Organizer (24 Clear Pockets)"
+    bestFor="Shoes, cleaning supplies, pantry items, bathroom toiletries"
+    whyItHelps="Holds up to 24 items in clear pockets that let you see everything at a glance. Works on bedroom, bathroom, pantry, and closet doors — wherever you need extra capacity."
+    renterNote="Hooks over the top of standard doors. No screws, no wall contact, no marks."
+    watchOut="Measure your door frame thickness before ordering. Slim frames under 1.5 inches may not work with all models."
+    category="reset"
+  />
+
+  <h2 id="tension">Tension-Mounted Systems</h2>
+  <p>
+    Tension caddies and poles press against two surfaces to stay in place. They hold surprisingly well, install in under five minutes, and leave zero trace when you take them down.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={2}
+    name="Tension-Pole Shower Caddy (3-Tier)"
+    bestFor="Shower storage without drilling into tile"
+    whyItHelps="Creates two or three tiers of storage using floor-to-ceiling pressure. Keeps shampoo, conditioner, and razors off the tub ledge and off the floor."
+    renterNote="No wall contact. Installs in under 10 minutes. Remove by releasing the tension."
+    watchOut="Measure floor-to-ceiling height first — most poles have a maximum height. Make sure the tension is tight enough that the pole won't shift."
+    category="reset"
+  />
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={3}
+    name="Tension Rod Shelf (Adjustable, Under-Sink or Cabinet)"
+    bestFor="Creating a second shelf layer in any cabinet without installation"
+    whyItHelps="A tension rod across a cabinet interior holds a small shelf or organizer tray at any height. Doubles vertical storage in cabinets that have wasted airspace."
+    renterNote="Spring tension holds the rod in place. No drilling, no brackets."
+    category="reset"
+  />
+
+  <h2 id="freestanding">Freestanding Storage</h2>
+  <p>
+    Freestanding furniture adds storage capacity without touching walls at all. A bathroom etagere, a rolling cart, or a bookcase used as a pantry substitute can dramatically change how much storage you have — in any room.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={4}
+    name="Freestanding Over-the-Toilet Etagere"
+    bestFor="Extra bathroom storage when there's no wall space to work with"
+    whyItHelps="Stands on its own with legs that straddle the toilet base. Adds two or three open shelves above the tank in a footprint that was previously empty. Holds towels, toiletries, and small baskets."
+    renterNote="Completely freestanding. No mounting, no drilling. Fits most standard toilets."
+    watchOut="Measure toilet tank width before ordering — some etageres are too narrow or too wide."
+    category="reset"
+  />
+
+  <h2 id="adhesive">Adhesive Hooks and Strips</h2>
+  <p>
+    For lightweight items — bags, coats, small organizers, kitchen tools — adhesive hooks are often the right call. They work best on smooth painted walls and have to be applied correctly to hold reliably.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={5}
+    name="Command Hook Variety Pack"
+    bestFor="Coats, bags, keys, lightweight kitchen and bathroom items"
+    whyItHelps="Designed to remove cleanly using the included stretch tab. Available in sizes rated for 1–5 lbs. The variety pack covers most small storage needs without buying multiple sets."
+    renterNote="Designed specifically for rental use — removes cleanly without paint damage when used correctly."
+    watchOut="Don't use on textured walls, wallpaper, or unprimed drywall. Press firmly for 30 seconds and wait 1 hour before adding weight."
+    category="reset"
+  />
+
+  <h2 id="mistakes">Common No-Drill Mistakes to Avoid</h2>
+  <ul>
+    <li><strong>Buying before measuring.</strong> Over-door systems, tension poles, and under-sink organizers all have specific size requirements. Always measure first.</li>
+    <li><strong>Overloading adhesive hooks.</strong> Each hook has a weight limit. Going over it doesn't just fail the hook — it can pull paint off the wall.</li>
+    <li><strong>Using suction cups on textured surfaces.</strong> Suction cups only work reliably on perfectly smooth, non-porous surfaces. Textured tile, grout lines, and matte finishes will cause them to fail.</li>
+    <li><strong>Skipping the bonding time.</strong> Command strips need 1 hour to bond before you add weight. Skipping this step is the most common reason they fail.</li>
+    <li><strong>Ignoring freestanding options.</strong> A rolling cart or a freestanding shelf often adds more storage than several small adhesive solutions — and doesn't require wall contact at all.</li>
+  </ul>
+
+</ArticleLayout>

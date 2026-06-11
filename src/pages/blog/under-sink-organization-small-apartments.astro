@@ -1,0 +1,147 @@
+---
+import ArticleLayout from '../../components/ArticleLayout.astro';
+import ProductRecommendationCard from '../../components/ProductRecommendationCard.astro';
+
+const toc = [
+  { label: 'Why under-sink is always a mess',    href: '#why' },
+  { label: 'Bathroom under-sink organization',   href: '#bathroom' },
+  { label: 'Kitchen under-sink organization',    href: '#kitchen' },
+  { label: 'What to store (and not store)',       href: '#what' },
+  { label: 'Common under-sink mistakes',          href: '#mistakes' },
+];
+
+const faqs = [
+  {
+    question: 'What\'s the best organizer for under a sink with pipes in the way?',
+    answer: 'A U-shaped under-sink organizer is specifically designed for this problem. The cutout wraps around the pipe and gives you a full shelf on either side. Pair it with small pull-out bins for the areas the main shelf can\'t reach.',
+  },
+  {
+    question: 'What should I actually store under the sink?',
+    answer: 'Bathroom: cleaning supplies, extra toilet paper, backup toiletries, and hair tools you use less often. Kitchen: dish soap, trash bags, cleaning sprays, and sponges. What shouldn\'t go under the sink: food, paper goods, medications, or anything sensitive to humidity.',
+  },
+  {
+    question: 'How do I keep the under-sink area organized after I set it up?',
+    answer: 'Keep it edited. Under-sink areas accumulate things quickly — cleaning products multiply, backup supplies get forgotten. Once a month, pull everything out, toss what\'s empty or expired, and put things back in their zones. Five minutes a month keeps it functional.',
+  },
+  {
+    question: 'Is the U-shaped organizer really better than regular shelf risers?',
+    answer: 'For under-sink specifically, yes. Regular shelf risers don\'t account for the pipe and often don\'t sit flat. The U-shape is designed for the exact configuration under most bathroom and kitchen sinks — it just works better.',
+  },
+];
+
+const relatedPosts = [
+  { title: '17 Renter-Friendly Bathroom Storage Ideas That Don\'t Damage Walls',    href: '/blog/renter-friendly-bathroom-storage',       category: 'bathroom' as const },
+  { title: 'Small Apartment Kitchen Organization Ideas for Renters With No Pantry', href: '/blog/small-apartment-kitchen-organization', category: 'kitchen' as const  },
+];
+---
+
+<ArticleLayout
+  title="Under-Sink Organization Ideas for Small Apartments — Organize with Mary"
+  description="Under-sink organization for small apartments — bathroom and kitchen. U-shaped organizers, pull-out bins, and zone systems that work around pipes without drilling."
+  h1="Under-Sink Organization Ideas for Small Apartments"
+  category="Under-Sink Storage"
+  categoryColor="bathroom"
+  readTime="5 min read"
+  {toc}
+  {faqs}
+  {relatedPosts}
+>
+
+  <p>
+    The cabinet under your sink might be the most frustrating space in your apartment. The pipe cuts through the middle, things fall over in the back, and you have to practically crawl in to find what you're looking for.
+  </p>
+  <p>
+    The fix is simpler than it sounds: stop treating it as one big shelf and start treating it as a set of small zones. Here's how to do it in both the bathroom and the kitchen.
+  </p>
+
+  <blockquote>
+    <strong>Measure before you buy:</strong> Write down the width, depth, and height of your under-sink cabinet — including the height from the floor to where the pipe enters. Under-sink organizers come in specific sizes and the pipe height determines which ones will actually fit.
+  </blockquote>
+
+  <h2 id="why">Why Under-Sink Is Always a Mess</h2>
+  <p>
+    Three things make under-sink storage uniquely difficult: the pipe takes up the center, the depth makes items at the back impossible to reach, and there's usually no natural visual organization so things get shoved in wherever they fit.
+  </p>
+  <p>
+    The solution is to work around the pipe (not fight it), use pull-out bins so the back is accessible, and group items by category rather than by size.
+  </p>
+
+  <h2 id="bathroom">Bathroom Under-Sink Organization</h2>
+  <p>
+    Bathroom under-sink cabinets typically store cleaning supplies, extra toilet paper, backup toiletries, and hair tools. The goal is to make the most-used items easy to grab and the backup items neatly stacked behind.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={1}
+    name="U-Shaped Under-Sink Organizer"
+    bestFor="Maximizing bathroom under-sink space around the pipe"
+    whyItHelps="The curved cutout wraps around the sink pipe and gives you a full shelf surface on either side. Immediately doubles usable space in a spot that's otherwise barely functional."
+    renterNote="No tools, no installation. Set it in the cabinet and start using it."
+    watchOut="Measure the pipe height from the cabinet floor before ordering — the organizer needs to clear it."
+    category="bathroom"
+  />
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={2}
+    name="Stackable Pull-Out Drawer Bins (Under-Sink Size)"
+    bestFor="Small items: hair ties, cotton rounds, medicines, travel sizes"
+    whyItHelps="Pull-out drawers mean you don't have to reach into the back corner. Two-tier stacking triples usable space even with the pipe in the way. Everything is accessible without rearranging."
+    renterNote="Free-standing. No tools or installation required."
+    category="bathroom"
+  />
+
+  <h2 id="kitchen">Kitchen Under-Sink Organization</h2>
+  <p>
+    Kitchen under-sink cabinets usually hold cleaning supplies, dish soap, trash bags, and sponges. The same approach applies: work around the pipe, pull out for access, and group by category.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={3}
+    name="Two-Tier Pull-Out Under-Sink Cabinet Organizer"
+    bestFor="Kitchen cleaning supplies, dish soap, trash bags, and sponges"
+    whyItHelps="Two levels of pull-out access — no more reaching into the dark back of the cabinet. Groups cleaning supplies in the front tier and backup supplies in the rear. Works around most pipe configurations."
+    renterNote="Free-standing and adjustable. No installation, no tools."
+    watchOut="Measure cabinet width and depth before buying — these organizers come in several sizes."
+    category="kitchen"
+  />
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={4}
+    name="Small Tension Rod (for Spray Bottles Under Sink)"
+    bestFor="Hanging spray cleaning bottles so the floor stays clear"
+    whyItHelps="A tension rod stretched across the cabinet interior lets you hang spray bottle triggers from it — keeping bottles off the floor and freeing up the lower space for other storage."
+    renterNote="Spring tension holds the rod. No screws, no marks."
+    watchOut="Spray bottles need to hang by the trigger — measure trigger width to make sure they'll catch the rod."
+    category="kitchen"
+  />
+
+  <h2 id="what">What to Store (and Not Store) Under the Sink</h2>
+  <p><strong>Good under-sink storage:</strong></p>
+  <ul>
+    <li>Cleaning supplies and sprays</li>
+    <li>Extra toilet paper and tissues (bathroom)</li>
+    <li>Trash bags and sponges (kitchen)</li>
+    <li>Backup toiletries in a labeled bin</li>
+    <li>Hair tools in a small caddy (bathroom)</li>
+  </ul>
+  <p><strong>Keep out:</strong></p>
+  <ul>
+    <li>Food or anything sensitive to humidity</li>
+    <li>Medications — temperature swings and moisture are bad for most pills</li>
+    <li>Paper goods that will warp if the pipe drips</li>
+    <li>Anything you use daily — it's too inconvenient to access</li>
+  </ul>
+
+  <h2 id="mistakes">Common Under-Sink Mistakes</h2>
+  <ul>
+    <li><strong>Buying a standard shelf riser instead of a U-shaped organizer.</strong> Standard risers don't account for the pipe and don't sit flat in most under-sink cabinets.</li>
+    <li><strong>Storing daily-use items back here.</strong> Under-sink is for backup supplies and cleaning products — not things you reach for every day.</li>
+    <li><strong>Not editing first.</strong> Empty cleaners, duplicates, and products you've been keeping "just in case" take up the most space. Clear those out before buying anything.</li>
+    <li><strong>Ignoring the cabinet door.</strong> A small over-door organizer on the inside of the cabinet door adds a full column of storage for sponges, gloves, and small bottles.</li>
+  </ul>
+
+</ArticleLayout>

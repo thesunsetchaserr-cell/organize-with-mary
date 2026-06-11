@@ -1,0 +1,136 @@
+---
+import ArticleLayout from '../../components/ArticleLayout.astro';
+import ProductRecommendationCard from '../../components/ProductRecommendationCard.astro';
+
+const toc = [
+  { label: 'Maximize the rod',                   href: '#rod' },
+  { label: 'Add shelf storage without shelves',  href: '#shelves' },
+  { label: 'Door and wall space',                href: '#door' },
+  { label: 'Seasonal and overflow storage',      href: '#seasonal' },
+  { label: 'Common closet mistakes',             href: '#mistakes' },
+];
+
+const faqs = [
+  {
+    question: 'What\'s the single best closet upgrade for renters?',
+    answer: 'Switching to slim velvet hangers. It sounds minor, but slim hangers are about 1/5 the width of plastic ones — which means on a 36-inch rod, you can fit 30–35 more items without changing anything else. It\'s the cheapest way to almost double your rod capacity.',
+  },
+  {
+    question: 'How do I organize a reach-in closet with only one rod and one shelf?',
+    answer: 'Add a second rod level for short items using a closet rod extender (hooks over your existing rod). Use a hanging fabric organizer for folded items. Put an over-door organizer on the inside of the closet door for shoes or accessories. Those three changes completely transform a basic reach-in closet.',
+  },
+  {
+    question: 'What do I do with seasonal items in a small closet?',
+    answer: 'Move them out. Seasonal clothing shouldn\'t take up prime closet space. Under-bed flat storage containers and vacuum compression bags under the bed are the cleanest solution. Rotate twice a year: spring/summer in the closet, fall/winter under the bed — and swap.',
+  },
+  {
+    question: 'Is it worth buying a closet organizer kit?',
+    answer: 'Depends on the kit. Freestanding closet systems work well in reach-in closets and add significant storage. But many closet organization kits include more components than you actually need. Start with the specific pieces that solve your biggest storage problem, rather than a full system.',
+  },
+];
+
+const relatedPosts = [
+  { title: 'How to Organize a Tiny Closet Without Custom Shelving', href: '/blog/tiny-closet-organization',           category: 'closet' as const },
+  { title: 'Best No-Drill Storage Ideas for Renters',               href: '/blog/no-drill-storage-ideas-for-renters', category: 'reset' as const  },
+];
+---
+
+<ArticleLayout
+  title="Small Closet Storage Ideas for Renters — Organize with Mary"
+  description="Small closet storage ideas for renters — without custom shelving or permanent changes. Double your rod space, add shelf storage, and maximize every inch of a rental closet."
+  h1="Small Closet Storage Ideas for Renters"
+  category="Closet Organization"
+  categoryColor="closet"
+  readTime="5 min read"
+  {toc}
+  {faqs}
+  {relatedPosts}
+>
+
+  <p>
+    Most rental closets give you one rod, one shelf, and a floor. That setup works for about a third of what most people actually own. The rest gets piled in, folded over racks, and shoved in corners until the closet stops working entirely.
+  </p>
+  <p>
+    You can triple the capacity of a basic rental closet with a few targeted additions — nothing permanent, nothing that requires a tool.
+  </p>
+
+  <blockquote>
+    <strong>Edit before you organize:</strong> A closet with too many clothes isn't an organization problem — it's a volume problem. Pull everything out. If you haven't worn it in a year and can't name a specific upcoming occasion where you would, the donate pile is probably right.
+  </blockquote>
+
+  <h2 id="rod">Maximize the Rod</h2>
+  <p>
+    Your closet rod is the most valuable real estate in the closet. Two changes dramatically increase how much it holds: switching hangers and adding a second level for short items.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={1}
+    name="Slim Velvet Non-Slip Hangers (Set of 50)"
+    bestFor="Anyone using plastic or wire hangers who wants more rod space"
+    whyItHelps="Slim velvet hangers are about 1/5 the width of standard plastic ones. On a 36-inch rod, that difference means room for 30–35 additional items. Plus, clothes stop sliding to the floor."
+    renterNote="Hangs on your existing rod. Zero installation needed."
+    category="closet"
+  />
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={2}
+    name="Closet Rod Extender (Double Hang)"
+    bestFor="Short items like shirts, blouses, folded pants, and jackets"
+    whyItHelps="Hooks over your existing rod and creates a second hanging level below for shorter garments. On a standard 5-foot rod, this can add space for 20–30 additional items without touching the walls."
+    renterNote="Hooks over the existing rod. No tools, no hardware, no installation."
+    watchOut="Only works for short items — tops, blouses, folded pants. Full-length dresses and coats still need the main rod."
+    category="closet"
+  />
+
+  <h2 id="shelves">Add Shelf Storage Without Adding Shelves</h2>
+  <p>
+    If your closet has a single shelf above the rod, you're missing out on a lot of folded storage capacity. A hanging shelf organizer adds multiple tiers of folded storage by hanging from the rod itself — no wall mounting.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={3}
+    name="Hanging Closet Shelf Organizer (5-Tier)"
+    bestFor="Folded sweaters, jeans, t-shirts, and accessories"
+    whyItHelps="Creates five shelves of folded storage in the footprint of two or three hanging items. Keeps folded clothes visible and accessible without a dresser or additional shelving."
+    renterNote="Hooks over the closet rod. Takes five seconds to install or remove."
+    category="closet"
+  />
+
+  <h2 id="door">Door and Wall Space</h2>
+  <p>
+    The inside of your closet door is one of the most underused surfaces in the apartment. An over-door organizer turns it into storage for shoes, accessories, or small folded items — all in a space you're not currently using at all.
+  </p>
+
+  <!-- Replace with approved affiliate link after Amazon Associates / Impact approval -->
+  <ProductRecommendationCard
+    number={4}
+    name="Over-Door Closet Organizer (Shoe + Accessory Pockets)"
+    bestFor="Shoes, belts, scarves, small bags, and accessories"
+    whyItHelps="Uses the inside of the closet door for storage. Clear pockets let you see everything without searching. Holds up to 24 pairs of shoes or a mix of accessories and small items."
+    renterNote="Hooks over the door. No screws, no adhesive."
+    watchOut="Measure the door frame before buying — over-door organizers need enough clearance to hang without catching on the frame."
+    category="closet"
+  />
+
+  <h2 id="seasonal">Seasonal and Overflow Storage</h2>
+  <p>
+    Seasonal clothes — heavy coats, extra blankets, swimwear — shouldn't live in prime closet space. Moving them under the bed frees up the closet for the things you actually reach for regularly.
+  </p>
+  <ul>
+    <li><strong>Under-bed flat containers with lids</strong> — for folded seasonal items and extra bedding</li>
+    <li><strong>Vacuum storage bags</strong> — compress bulky items to about a third of their size</li>
+    <li><strong>Over-door hook rack</strong> in another room — for everyday coats and bags that don't need to live inside the closet</li>
+  </ul>
+
+  <h2 id="mistakes">Common Small Closet Mistakes</h2>
+  <ul>
+    <li><strong>Not switching hangers.</strong> Mismatched plastic and wire hangers waste more rod space than almost anything else. Matching slim velvet hangers make a visible difference before you buy anything else.</li>
+    <li><strong>Storing seasonal items in the most accessible spots.</strong> Winter coats shouldn't take the best rod space in July. Rotate seasonally.</li>
+    <li><strong>Ignoring the door.</strong> Over-door storage can hold 15–24 pairs of shoes or a full accessory collection in a space that's currently empty.</li>
+    <li><strong>Stacking folded items too high.</strong> Stacks taller than four or five items always collapse. Use dividers or a hanging organizer instead.</li>
+  </ul>
+
+</ArticleLayout>
