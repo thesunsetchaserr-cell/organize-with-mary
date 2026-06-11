@@ -3,8 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="You're In — Your Small Space Reset Kit Is Ready | Organize with Mary"
-  description="Thank you for your purchase. Your Small Space Reset Kit is ready to download."
+  title="Download Your Reset Kit | Organize with Mary"
+  description="Your purchase is complete. Download Mary's Small Space Reset Kit here."
 >
 
   <section class="ty-hero bg-linen">
@@ -12,28 +12,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <span class="ty-icon" aria-hidden="true">🎉</span>
       <h1 class="ty-headline">Your purchase is complete.</h1>
       <p class="ty-sub text-muted">
-        Check your inbox for access details. If you don't see it in a few minutes, check your spam folder or contact <a href="mailto:hello@trylucente.com">hello@trylucente.com</a>.
+        Download Mary's Small Space Reset Kit below. You can save it to your device, print the pages, or use it digitally.
       </p>
     </div>
   </section>
 
-  <section class="ty-email-note bg-cream">
+  <section class="ty-download bg-cream">
     <div class="container--narrow text-center">
-      <h2>What happens next</h2>
-      <p class="text-muted">
-        Your download link is on its way from <strong>Organize with Mary</strong>. Add us to your contacts so it doesn't land in spam.
+      <!-- Add final Reset Kit PDF at public/downloads/marys-small-space-reset-kit.pdf before going live. -->
+      <a
+        href="/downloads/marys-small-space-reset-kit.pdf"
+        download
+        class="btn btn--primary btn--lg ty-download-btn"
+      >
+        Download the Reset Kit
+      </a>
+      <p class="ty-bookmark text-sm text-muted">
+        This page is your access page. Bookmark it or save your PDF after downloading.
       </p>
-      <p class="text-muted">
-        Over the next few days I'll also send you a few tips on how to get the most out of the kit — starting with which room to tackle first.
+      <p class="ty-support text-sm text-muted">
+        Need help? Email <a href="mailto:hello@trylucente.com">hello@trylucente.com</a>.
       </p>
     </div>
   </section>
 
   <section class="ty-next">
     <div class="container--content text-center">
-      <h2>While you wait, start reading</h2>
+      <h2>While you're here, start reading</h2>
       <p class="text-muted ty-next-sub">
-        These guides pair directly with your checklist.
+        These guides pair directly with your kit.
       </p>
       <div class="ty-next-grid">
         <a href="/blog/renter-friendly-bathroom-storage" class="ty-next-card card">
@@ -74,11 +81,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .ty-hero { padding-block: var(--s-16) var(--s-10); }
   .ty-icon { font-size: 3rem; display: block; margin-bottom: var(--s-5); }
   .ty-headline { font-size: clamp(1.6rem, 4vw, 2.8rem); margin-bottom: var(--s-5); }
-  .ty-sub { font-size: var(--text-lg); }
-  .ty-sub a { color: var(--c-clay); }
+  .ty-sub { font-size: var(--text-lg); max-width: 540px; margin-inline: auto; }
 
-  .ty-email-note { padding-block: var(--s-12); }
-  .ty-email-note h2 { margin-bottom: var(--s-4); }
+  .ty-download { padding-block: var(--s-10) var(--s-12); }
+  .ty-download-btn { display: inline-block; margin-bottom: var(--s-4); }
+  .ty-bookmark { margin-bottom: var(--s-2); }
+  .ty-support a { color: var(--c-clay); }
 
   .ty-next { padding-block: var(--s-12); }
   .ty-next-sub { margin-bottom: var(--s-8); }
@@ -100,7 +108,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   @media (max-width: 480px) {
     .ty-hero { padding-block: var(--s-8) var(--s-6); }
     .ty-sub { font-size: var(--text-base); }
-    .ty-email-note { padding-block: var(--s-8); }
+    .ty-download { padding-block: var(--s-8); }
+    .ty-download-btn { width: 100%; text-align: center; }
     .ty-next { padding-block: var(--s-8); }
     .ty-next-sub { margin-bottom: var(--s-5); }
   }
