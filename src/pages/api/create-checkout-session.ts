@@ -18,7 +18,7 @@ export const POST: APIRoute = async () => {
     const stripe = new Stripe(secretKey);
 
     const session = await stripe.checkout.sessions.create({
-      ui_mode:   'embedded',
+      ui_mode:   'embedded_page',
       mode:      'payment',
       line_items: [{ price: priceId, quantity: 1 }],
       return_url: 'https://www.trylucente.com/thank-you?session_id={CHECKOUT_SESSION_ID}',

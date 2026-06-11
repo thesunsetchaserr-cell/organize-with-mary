@@ -198,20 +198,22 @@ const faqs = [
     if (!container) return;
 
     try {
-      const res = await fetch('/api/create-checkout-session', { method: 'POST' });
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        console.error('Checkout API error', res.status, body);
-        throw new Error('session_error');
-      }
-
-      const data = await res.json();
-      if (!data.clientSecret) throw new Error('no_secret');
-
       const stripe = await loadStripe(import.meta.env.PUBLIC_STRIPE_PUBLISHABLE_KEY);
       if (!stripe) throw new Error('stripe_load_failed');
 
-      const checkout = await stripe.initEmbeddedCheckout({ clientSecret: data.clientSecret });
+      const checkout = await stripe.initEmbeddedCheckout({
+        fetchClientSecret: async () => {
+          const res = await fetch('/api/create-checkout-session', { method: 'POST' });
+          if (!res.ok) {
+            const body = await res.json().catch(() => ({}));
+            console.error('Checkout API error', res.status, body);
+            throw new Error('session_error');
+          }
+          const data = await res.json();
+          if (!data.clientSecret) throw new Error('no_secret');
+          return data.clientSecret;
+        },
+      });
       container.innerHTML = '';
       checkout.mount(container);
     } catch {
