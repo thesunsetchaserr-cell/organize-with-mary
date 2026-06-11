@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import KitFormPlaceholder from '../components/KitFormPlaceholder.astro';
 import FAQ from '../components/FAQ.astro';
 
 const benefits = [
@@ -104,7 +103,9 @@ const faqs = [
       <span class="section-label">Free — No Credit Card</span>
       <h2 class="form-hl">Get the Free Checklist</h2>
       <p class="text-muted form-sub">Enter your email and I'll send it straight to your inbox.</p>
-      <KitFormPlaceholder label="Send Me the Free Checklist" />
+      <div class="kit-embed">
+        <script is:inline async data-uid="8098d526fb" src="https://organize-with-mary.kit.com/8098d526fb/index.js"></script>
+      </div>
     </div>
   </section>
 
@@ -167,7 +168,9 @@ const faqs = [
       <p class="text-muted form-bottom-sub">
         Download the checklist and spend the next hour creating calm in the room that's been bothering you most.
       </p>
-      <KitFormPlaceholder label="Get the Free Checklist Now" />
+      <div class="kit-embed">
+        <script is:inline async data-uid="8098d526fb" src="https://organize-with-mary.kit.com/8098d526fb/index.js"></script>
+      </div>
     </div>
   </section>
 
@@ -259,6 +262,11 @@ const faqs = [
   .form-section, .form-section-bottom { padding-block: var(--s-12); }
   .form-hl, .form-bottom-hl { margin-bottom: var(--s-3); }
   .form-sub, .form-bottom-sub { margin-bottom: var(--s-6); }
+
+  /* Kit embed wrapper */
+  .kit-embed { width: 100%; max-width: 480px; margin-inline: auto; }
+  .kit-embed :global(.formkit-form) { width: 100% !important; }
+  .kit-embed :global(input), .kit-embed :global(button) { width: 100% !important; box-sizing: border-box !important; }
 
   /* Trust */
   .trust-section { padding-block: var(--s-10); }
