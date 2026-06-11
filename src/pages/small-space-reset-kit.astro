@@ -216,7 +216,8 @@ const faqs = [
       });
       container.innerHTML = '';
       checkout.mount(container);
-    } catch {
+    } catch (err) {
+      console.error('Checkout mount error:', err);
       container.innerHTML =
         '<p class="checkout-error">Something went wrong loading checkout. Please refresh the page.</p>';
     }
