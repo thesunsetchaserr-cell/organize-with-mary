@@ -28,9 +28,10 @@ export const POST: APIRoute = async () => {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (err) {
-    console.error('Stripe session error:', err);
-    return new Response(JSON.stringify({ error: 'Failed to create checkout session' }), {
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.error('Stripe session error:', message);
+    return new Response(JSON.stringify({ error: message }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
