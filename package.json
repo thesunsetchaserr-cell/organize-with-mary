@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.15.0"
+    "@astrojs/vercel": "^7.8.2",
+    "@stripe/stripe-js": "^9.8.0",
+    "astro": "^4.15.0",
+    "stripe": "^22.2.0"
   }
 }

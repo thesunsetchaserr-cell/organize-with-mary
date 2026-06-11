@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import StripeCheckoutPlaceholder from '../components/StripeCheckoutPlaceholder.astro';
 import FAQ from '../components/FAQ.astro';
 
 const included = [
@@ -155,12 +154,16 @@ const faqs = [
 
   <!-- ═══ CHECKOUT ═══ -->
   <section id="checkout" class="checkout-section bg-cream">
-    <div class="container--narrow text-center">
-      <span class="section-label">One-Time Payment · Instant Download</span>
-      <h2 class="checkout-hl">Get Mary's Small Space Reset Kit</h2>
-      <p class="text-muted checkout-sub">Everything you need to reset your rental apartment — room by room.</p>
-      <StripeCheckoutPlaceholder price="$17" productName="Mary's Small Space Reset Kit" />
-      <p class="checkout-reassurance text-sm text-muted">
+    <div class="container--narrow">
+      <div class="text-center">
+        <span class="section-label">One-Time Payment · Instant Download</span>
+        <h2 class="checkout-hl">Get Mary's Small Space Reset Kit</h2>
+        <p class="text-muted checkout-sub">Everything you need to reset your rental apartment — room by room.</p>
+      </div>
+      <div id="stripe-checkout-container" class="stripe-checkout-mount">
+        <p class="checkout-loading text-muted">Loading checkout…</p>
+      </div>
+      <p class="checkout-reassurance text-sm text-muted text-center">
         This is a digital product. You'll receive access after purchase. Print the pages or use them digitally.
       </p>
     </div>
@@ -186,6 +189,35 @@ const faqs = [
   </section>
 
 </BaseLayout>
+
+<script>
+  import { loadStripe } from '@stripe/stripe-js';
+
+  async function mountCheckout() {
+    const container = document.getElementById('stripe-checkout-container');
+    if (!container) return;
+
+    try {
+      const res = await fetch('/api/create-checkout-session', { method: 'POST' });
+      if (!res.ok) throw new Error('session_error');
+
+      const data = await res.json();
+      if (!data.clientSecret) throw new Error('no_secret');
+
+      const stripe = await loadStripe(import.meta.env.PUBLIC_STRIPE_PUBLISHABLE_KEY);
+      if (!stripe) throw new Error('stripe_load_failed');
+
+      const checkout = await stripe.initEmbeddedCheckout({ clientSecret: data.clientSecret });
+      container.innerHTML = '';
+      checkout.mount(container);
+    } catch {
+      container.innerHTML =
+        '<p class="checkout-error">Something went wrong loading checkout. Please refresh the page.</p>';
+    }
+  }
+
+  mountCheckout();
+</script>
 
 <style>
   /* Hero */
@@ -284,8 +316,29 @@ const faqs = [
   /* Checkout */
   .checkout-section { padding-block: var(--section-py); }
   .checkout-hl { margin-bottom: var(--s-3); }
-  .checkout-sub { margin-bottom: var(--s-8); }
+  .checkout-sub { margin-bottom: var(--s-6); }
   .checkout-reassurance { margin-top: var(--s-5); max-width: 360px; margin-inline: auto; }
+
+  /* Stripe Embedded Checkout */
+  .stripe-checkout-mount { width: 100%; margin-bottom: var(--s-4); }
+  .checkout-loading {
+    text-align: center;
+    padding: var(--s-10);
+    font-size: var(--text-base);
+  }
+  .checkout-error {
+    text-align: center;
+    padding: var(--s-8);
+    color: #c0392b;
+    font-size: var(--text-base);
+    background: #fff5f5;
+    border-radius: var(--r-md);
+    border: 1px solid #fecaca;
+  }
+
+  @media (max-width: 480px) {
+    .stripe-checkout-mount { margin-inline: calc(-1 * var(--s-4)); width: calc(100% + 2 * var(--s-4)); }
+  }
 
   /* Final CTA */
   .final-cta { padding-block: var(--s-12); }
