@@ -9,6 +9,9 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@astrojs/vercel": "^7.8.2",
     "@stripe/stripe-js": "^9.8.0",
