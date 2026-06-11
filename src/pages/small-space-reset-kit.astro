@@ -201,7 +201,7 @@ const faqs = [
       const stripe = await loadStripe(import.meta.env.PUBLIC_STRIPE_PUBLISHABLE_KEY);
       if (!stripe) throw new Error('stripe_load_failed');
 
-      const checkout = await stripe.initEmbeddedCheckout({
+      const checkout = await stripe.createEmbeddedCheckoutPage({
         fetchClientSecret: async () => {
           const res = await fetch('/api/create-checkout-session', { method: 'POST' });
           if (!res.ok) {
