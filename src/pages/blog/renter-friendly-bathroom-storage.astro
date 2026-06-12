@@ -61,18 +61,6 @@ const relatedPosts = [
     <strong>Measure before you buy:</strong> Write down your under-sink height, the space beside your toilet, shower floor-to-ceiling height, and counter width. Five minutes of measuring prevents multiple trips back to the store.
   </blockquote>
 
-  <figure class="article-hero-fig">
-    <img
-      src="/images/blog/bathroom-before-after.webp"
-      alt="Small rental bathroom before and after organization with renter-friendly storage"
-      class="article-hero-img"
-      loading="eager"
-      width="800"
-      height="534"
-    />
-    <figcaption class="article-hero-caption">No drilling, no renovation — just better storage zones for daily clutter.</figcaption>
-  </figure>
-
   <h2 id="shower">No-Drill Shower Storage</h2>
   <p>
     Your shower is probably the most chaotic storage zone in a small rental bathroom — bottles lined up on the tub ledge, things falling over, nowhere stable to put a razor. These solutions fix that without touching the walls.
@@ -101,6 +89,18 @@ const relatedPosts = [
     buttonText="See it on Amazon"
     category="bathroom"
   />
+
+  <figure class="article-hero-fig">
+    <img
+      src="/images/blog/bathroom-before-after.webp"
+      alt="Small rental bathroom before and after organization with renter-friendly storage"
+      class="article-hero-img"
+      loading="lazy"
+      width="800"
+      height="534"
+    />
+    <figcaption class="article-hero-caption">Small renter-friendly storage swaps can make a bathroom feel calmer fast.</figcaption>
+  </figure>
 
   <h2 id="under-sink">Under-Sink Organization</h2>
   <p>
@@ -203,13 +203,15 @@ const relatedPosts = [
 
 <style>
   .article-hero-fig {
-    margin-block: var(--s-8);
+    margin-block: var(--s-6);
   }
   .article-hero-img {
     width: 100%;
     height: auto;
+    max-height: 300px;
+    object-fit: cover;
     border-radius: var(--r-lg);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
     border: 1px solid var(--c-border-light);
     display: block;
   }
